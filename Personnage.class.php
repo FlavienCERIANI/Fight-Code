@@ -9,44 +9,61 @@
 class Personnage
 {
     public $_nom;
-    private $_sante=100;
+    private $_sante=50;
     private $_bouclier;
     private $_potion=50;
     private $_attaque;
     private $_defense;
+    private $_nb_attaque;
 
     public function __construct($nom)
     {
         $this->_nom = $nom;
+    }
 
-        if ($nom == "Rondoudou") {
-            $this->_attaque = 12;
-            $this->_defense = 10;
-        }
-        else if ($nom == "Dracofeu") {
-            $this->_attaque = 16;
-            $this->_defense = 17;
-        }
-        else {
-            return false;
-        }
-
+    public function getNom(){
+        return $this->_nom;
     }
 
     public function getSante(){
         return $this->_sante;
     }
 
-    public function potion(){
-        return $this->_sante+=$this->_potion;
+    public function attaque($atk){
+        $this->_attaque=$atk;
     }
 
-    public function degat($degat){
-        return $degat*$this->_attaque;
+    public function getAttaque(){
+        return $this->_attaque;
     }
 
-    public function subit_attaque($degat){
-        return $this->_sante-=$degat-$this->_defense;
+    public function defense($def){
+         $this->_defense=$def;
+    }
+
+    public function getDefense(){
+        return $this->_defense;
+    }
+
+    public function subit_attaque($degat,$def){
+
+        $this->_nb_attaque=$degat-$def;
+        if($this->_nb_attaque<0){
+            $this->_nb_attaque=0;
+        }
+
+        $this->_sante-=$this->_nb_attaque;
+        return $this->_nb_attaque;
+    }
+
+    public function getDegat(){
+        return $this->_nb_attaque." de dégat<br>".$this->coupcritique();
+    }
+
+    private function coupcritique(){
+        if($this->_nb_attaque>15){
+            return "coup critique !!!"."<br>";
+        }
     }
 
     public function mort(){

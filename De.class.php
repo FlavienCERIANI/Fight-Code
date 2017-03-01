@@ -12,7 +12,7 @@ class De{
     }
     // Permet de lancer le dé et de récupérer une valeur entre 1 et 6
     public function lanceDe(){
-        $nbDe=rand(1,6);
+        $nbDe=rand(1,20);
         return $nbDe;
     }
 }
