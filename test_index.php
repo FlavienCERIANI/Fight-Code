@@ -9,7 +9,11 @@ echo "Début du combat";
 
 include('Personnage.class.php');
 include('De.class.php');
+?>
 
+
+
+<?php
 $compteur=0;
 $de = new De();
 
