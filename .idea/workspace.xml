@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7a416937-7eec-482b-a6e4-7adfcd1ab9e5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/De.class.php" afterPath="$PROJECT_DIR$/De.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Personnage.class.php" afterPath="$PROJECT_DIR$/Personnage.class.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test_index.php" afterPath="$PROJECT_DIR$/test_index.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,11 +18,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="test_index.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test_index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test_index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="49" column="34" lean-forward="false" selection-start-line="49" selection-start-column="34" selection-end-line="49" selection-end-column="34" />
+            <state relative-caret-position="195">
+              <caret line="55" column="33" lean-forward="false" selection-start-line="55" selection-start-column="33" selection-end-line="55" selection-end-column="33" />
               <folding>
                 <element signature="e#6#95#0#PHP" expanded="true" />
               </folding>
@@ -32,15 +30,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Personnage.class.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Personnage.class.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Personnage.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="64" column="44" lean-forward="false" selection-start-line="64" selection-start-column="44" selection-end-line="64" selection-end-column="44" />
+            <state relative-caret-position="600">
+              <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
               <folding>
                 <element signature="e#6#95#0#PHP" expanded="true" />
-                <element signature="n#__construct#0;n#Personnage#0;n#!!top" expanded="false" />
+                <element signature="n#getNom#0;n#Personnage#0;n#!!top" expanded="false" />
                 <element signature="n#getSante#0;n#Personnage#0;n#!!top" expanded="false" />
+                <element signature="n#getDefense#0;n#Personnage#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -49,7 +48,7 @@
       <file leaf-file-name="De.class.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/De.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
+            <state relative-caret-position="135">
               <caret line="14" column="23" lean-forward="false" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
               <folding>
                 <element signature="e#6#95#0#PHP" expanded="true" />
@@ -98,7 +97,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -114,6 +112,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -192,12 +191,13 @@
       <workItem from="1487164154352" duration="1374000" />
       <workItem from="1487165697343" duration="5454000" />
       <workItem from="1488354459210" duration="1815000" />
-      <workItem from="1488357601277" duration="5837000" />
+      <workItem from="1488357601277" duration="7633000" />
+      <workItem from="1488960822482" duration="921000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14480000" />
+    <option name="totallyTimeSpent" value="17197000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="743" extended-state="0" />
@@ -229,18 +229,60 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/Personnage.class.php</url>
+          <line>35</line>
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/test_index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#6#95#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Personnage.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="885">
+          <caret line="64" column="44" lean-forward="false" selection-start-line="64" selection-start-column="44" selection-end-line="64" selection-end-column="44" />
+          <folding>
+            <element signature="e#6#95#0#PHP" expanded="true" />
+            <element signature="n#getNom#0;n#Personnage#0;n#!!top" expanded="false" />
+            <element signature="n#getSante#0;n#Personnage#0;n#!!top" expanded="false" />
+            <element signature="n#getDefense#0;n#Personnage#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/De.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="14" column="23" lean-forward="false" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+          <folding>
+            <element signature="e#6#95#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Personnage.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#6#95#0#PHP" expanded="true" />
-            <element signature="n#__construct#0;n#Personnage#0;n#!!top" expanded="false" />
+            <element signature="n#getNom#0;n#Personnage#0;n#!!top" expanded="false" />
             <element signature="n#getSante#0;n#Personnage#0;n#!!top" expanded="false" />
+            <element signature="n#getDefense#0;n#Personnage#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -251,8 +293,9 @@
           <caret line="48" column="52" lean-forward="false" selection-start-line="48" selection-start-column="52" selection-end-line="48" selection-end-column="52" />
           <folding>
             <element signature="e#6#95#0#PHP" expanded="true" />
-            <element signature="n#__construct#0;n#Personnage#0;n#!!top" expanded="false" />
+            <element signature="n#getNom#0;n#Personnage#0;n#!!top" expanded="false" />
             <element signature="n#getSante#0;n#Personnage#0;n#!!top" expanded="false" />
+            <element signature="n#getDefense#0;n#Personnage#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -283,8 +326,9 @@
           <caret line="26" column="25" lean-forward="false" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
           <folding>
             <element signature="e#6#95#0#PHP" expanded="true" />
-            <element signature="n#__construct#0;n#Personnage#0;n#!!top" expanded="false" />
+            <element signature="n#getNom#0;n#Personnage#0;n#!!top" expanded="false" />
             <element signature="n#getSante#0;n#Personnage#0;n#!!top" expanded="false" />
+            <element signature="n#getDefense#0;n#Personnage#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -301,8 +345,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/De.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
+        <state relative-caret-position="135">
           <caret line="14" column="23" lean-forward="false" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+          <folding>
+            <element signature="e#6#95#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="55" column="33" lean-forward="false" selection-start-line="55" selection-start-column="33" selection-end-line="55" selection-end-column="33" />
           <folding>
             <element signature="e#6#95#0#PHP" expanded="true" />
           </folding>
@@ -311,22 +365,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Personnage.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="64" column="44" lean-forward="false" selection-start-line="64" selection-start-column="44" selection-end-line="64" selection-end-column="44" />
+        <state relative-caret-position="600">
+          <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
           <folding>
             <element signature="e#6#95#0#PHP" expanded="true" />
-            <element signature="n#__construct#0;n#Personnage#0;n#!!top" expanded="false" />
+            <element signature="n#getNom#0;n#Personnage#0;n#!!top" expanded="false" />
             <element signature="n#getSante#0;n#Personnage#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="49" column="34" lean-forward="false" selection-start-line="49" selection-start-column="34" selection-end-line="49" selection-end-column="34" />
-          <folding>
-            <element signature="e#6#95#0#PHP" expanded="true" />
+            <element signature="n#getDefense#0;n#Personnage#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -5,7 +5,7 @@
  * Date: 15/02/17
  * Time: 14:15
  */
-echo "Début du combat<br>";
+echo "Début du combat";
 
 include('Personnage.class.php');
 include('De.class.php');
@@ -45,11 +45,15 @@ while ((!$player1->mort()) && (!$player2->mort())) {
 
     echo $player2->getNom(). " reçoit ".$player2->getDegat();
 
+
     /////////Verification que l'adversaire soit toujours en vie//////
     if($player2->mort()){
         echo $player2->_nom." est K.O<br>";
         break;
     }
+
+    echo $player1->getNom(). " a ".$player1->getSante()." point de vie<br>";
+    echo $player2->getNom(). " a ".$player2->getSante()." point de vie<br>";
 
     ///////////////////////////Phase defense/////////////////////
     echo "Phase Defense"."<br>";
@@ -65,6 +69,8 @@ while ((!$player1->mort()) && (!$player2->mort())) {
         echo $player1->_nom." est K.O<br>";
         break;
     }
+    echo $player1->getNom(). " a ".$player1->getSante()." point de vie<br>";
+    echo $player2->getNom(). " a ".$player2->getSante()." point de vie<br>";
 }
 echo "Combat Terminé !!";
 
