@@ -9,7 +9,7 @@
 class Personnage
 {
     public $_nom;
-    private $_sante=50;
+    private $_sante=20;
     private $_bouclier;
     private $_potion=50;
     private $_attaque;
@@ -68,7 +68,22 @@ class Personnage
 
     public function mort(){
        return $this->_sante <= 0 ;
+    }
 
-
+    public function UsePotion($nb){
+      if ($nb >= 1){
+        for($i=0;$i<10;$i++){
+          if($this->_sante == 50){
+            return true ;
+          }
+          else {
+              $this->_sante += 1;
+          }
+        }
+      return true ;
+      }
+      else {
+        return false;
+      }
     }
 }
