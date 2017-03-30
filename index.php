@@ -14,8 +14,16 @@ $_SESSION['potion_joueur'] = 1;
 $_SESSION['potion_IA'] = 1;
 
 ?>
-Coucou
+Choissisez votre mode de jeu :
+
+ <!-- <form id="form1" name="form" method="post" action="test_index.php" >
+     <input type="submit" class="button" value="Commencer">
+ </form> -->
 
  <form id="form1" name="form" method="post" action="test_index.php" >
-     <input type="submit" class="button" value="Commencer">
+     <input type="submit" class="button" name="facile" value="Facile">
+ </form>
+
+ <form id="form2" name="form" method="post" action="test_index.php" >
+     <input type="submit" class="button" name="difficile" value="Difficile">
  </form>
