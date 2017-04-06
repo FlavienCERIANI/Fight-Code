@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7a416937-7eec-482b-a6e4-7adfcd1ab9e5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Personnage.class.php" afterPath="$PROJECT_DIR$/Personnage.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/de.js" afterPath="$PROJECT_DIR$/de.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/question.php" afterPath="$PROJECT_DIR$/question.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test_index.php" afterPath="$PROJECT_DIR$/test_index.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,11 +24,10 @@
       <file leaf-file-name="test_index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test_index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1493">
-              <caret line="217" column="0" lean-forward="false" selection-start-line="217" selection-start-column="0" selection-end-line="217" selection-end-column="0" />
+            <state relative-caret-position="323">
+              <caret line="70" column="28" lean-forward="false" selection-start-line="70" selection-start-column="28" selection-end-line="70" selection-end-column="28" />
               <folding>
                 <element signature="e#6#95#0#PHP" expanded="true" />
-                <element signature="e#1357#1393#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -35,7 +36,7 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
+            <state relative-caret-position="435">
               <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding />
             </state>
@@ -49,10 +50,7 @@
               <caret line="20" column="27" lean-forward="false" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
               <folding>
                 <element signature="e#6#95#0#PHP" expanded="true" />
-                <element signature="n#getNom#0;n#Personnage#0;n#!!top" expanded="false" />
-                <element signature="n#getSante#0;n#Personnage#0;n#!!top" expanded="false" />
-                <element signature="n#getDefense#0;n#Personnage#0;n#!!top" expanded="false" />
-                <marker date="1490191053990" expanded="true" signature="1312:1348" ph="..." />
+                <marker date="1491376772283" expanded="true" signature="1476:1513" ph="..." />
               </folding>
             </state>
           </provider>
@@ -212,11 +210,12 @@
       <workItem from="1490168788735" duration="3662000" />
       <workItem from="1490691431468" duration="667000" />
       <workItem from="1490787540676" duration="610000" />
+      <workItem from="1491376089027" duration="620000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26252000" />
+    <option name="totallyTimeSpent" value="26872000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="743" extended-state="0" />
@@ -266,7 +265,45 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#6#95#0#PHP" expanded="true" />
-            <element signature="e#1357#1393#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Personnage.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="27" lean-forward="false" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
+          <folding>
+            <element signature="e#6#95#0#PHP" expanded="true" />
+            <marker date="1491376772283" expanded="true" signature="1476:1513" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/De.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="14" column="23" lean-forward="false" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+          <folding>
+            <element signature="e#6#95#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#6#95#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -285,10 +322,7 @@
           <caret line="20" column="27" lean-forward="false" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
           <folding>
             <element signature="e#6#95#0#PHP" expanded="true" />
-            <element signature="n#getNom#0;n#Personnage#0;n#!!top" expanded="false" />
-            <element signature="n#getSante#0;n#Personnage#0;n#!!top" expanded="false" />
-            <element signature="n#getDefense#0;n#Personnage#0;n#!!top" expanded="false" />
-            <marker date="1490191053990" expanded="true" signature="1312:1348" ph="..." />
+            <marker date="1491376772283" expanded="true" signature="1476:1513" ph="..." />
           </folding>
         </state>
       </provider>
@@ -309,7 +343,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#6#95#0#PHP" expanded="true" />
-            <element signature="e#1357#1393#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -320,10 +353,7 @@
           <caret line="20" column="27" lean-forward="true" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
           <folding>
             <element signature="e#6#95#0#PHP" expanded="true" />
-            <element signature="n#getNom#0;n#Personnage#0;n#!!top" expanded="false" />
-            <element signature="n#getSante#0;n#Personnage#0;n#!!top" expanded="false" />
-            <element signature="n#getDefense#0;n#Personnage#0;n#!!top" expanded="false" />
-            <marker date="1490191053990" expanded="true" signature="1312:1348" ph="..." />
+            <marker date="1491376772283" expanded="true" signature="1476:1513" ph="..." />
           </folding>
         </state>
       </provider>
@@ -344,7 +374,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#6#95#0#PHP" expanded="true" />
-            <element signature="e#1357#1393#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -355,10 +384,7 @@
           <caret line="64" column="44" lean-forward="false" selection-start-line="64" selection-start-column="44" selection-end-line="64" selection-end-column="44" />
           <folding>
             <element signature="e#6#95#0#PHP" expanded="true" />
-            <element signature="n#getNom#0;n#Personnage#0;n#!!top" expanded="false" />
-            <element signature="n#getSante#0;n#Personnage#0;n#!!top" expanded="false" />
-            <element signature="n#getDefense#0;n#Personnage#0;n#!!top" expanded="false" />
-            <marker date="1490191053990" expanded="true" signature="1312:1348" ph="..." />
+            <marker date="1491376772283" expanded="true" signature="1476:1513" ph="..." />
           </folding>
         </state>
       </provider>
@@ -379,10 +405,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#6#95#0#PHP" expanded="true" />
-            <element signature="n#getNom#0;n#Personnage#0;n#!!top" expanded="false" />
-            <element signature="n#getSante#0;n#Personnage#0;n#!!top" expanded="false" />
-            <element signature="n#getDefense#0;n#Personnage#0;n#!!top" expanded="false" />
-            <marker date="1490191053990" expanded="true" signature="1312:1348" ph="..." />
+            <marker date="1491376772283" expanded="true" signature="1476:1513" ph="..." />
           </folding>
         </state>
       </provider>
@@ -393,10 +416,7 @@
           <caret line="48" column="52" lean-forward="false" selection-start-line="48" selection-start-column="52" selection-end-line="48" selection-end-column="52" />
           <folding>
             <element signature="e#6#95#0#PHP" expanded="true" />
-            <element signature="n#getNom#0;n#Personnage#0;n#!!top" expanded="false" />
-            <element signature="n#getSante#0;n#Personnage#0;n#!!top" expanded="false" />
-            <element signature="n#getDefense#0;n#Personnage#0;n#!!top" expanded="false" />
-            <marker date="1490191053990" expanded="true" signature="1312:1348" ph="..." />
+            <marker date="1491376772283" expanded="true" signature="1476:1513" ph="..." />
           </folding>
         </state>
       </provider>
@@ -417,7 +437,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#6#95#0#PHP" expanded="true" />
-            <element signature="e#1357#1393#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -428,10 +447,7 @@
           <caret line="26" column="25" lean-forward="false" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
           <folding>
             <element signature="e#6#95#0#PHP" expanded="true" />
-            <element signature="n#getNom#0;n#Personnage#0;n#!!top" expanded="false" />
-            <element signature="n#getSante#0;n#Personnage#0;n#!!top" expanded="false" />
-            <element signature="n#getDefense#0;n#Personnage#0;n#!!top" expanded="false" />
-            <marker date="1490191053990" expanded="true" signature="1312:1348" ph="..." />
+            <marker date="1491376772283" expanded="true" signature="1476:1513" ph="..." />
           </folding>
         </state>
       </provider>
@@ -442,25 +458,23 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#6#95#0#PHP" expanded="true" />
-            <element signature="e#1357#1393#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test_index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1493">
-          <caret line="217" column="0" lean-forward="false" selection-start-line="217" selection-start-column="0" selection-end-line="217" selection-end-column="0" />
+        <state relative-caret-position="323">
+          <caret line="70" column="28" lean-forward="false" selection-start-line="70" selection-start-column="28" selection-end-line="70" selection-end-column="28" />
           <folding>
             <element signature="e#6#95#0#PHP" expanded="true" />
-            <element signature="e#1357#1393#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
+        <state relative-caret-position="435">
           <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding />
         </state>
@@ -472,10 +486,7 @@
           <caret line="20" column="27" lean-forward="false" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
           <folding>
             <element signature="e#6#95#0#PHP" expanded="true" />
-            <element signature="n#getNom#0;n#Personnage#0;n#!!top" expanded="false" />
-            <element signature="n#getSante#0;n#Personnage#0;n#!!top" expanded="false" />
-            <element signature="n#getDefense#0;n#Personnage#0;n#!!top" expanded="false" />
-            <marker date="1490191053990" expanded="true" signature="1312:1348" ph="..." />
+            <marker date="1491376772283" expanded="true" signature="1476:1513" ph="..." />
           </folding>
         </state>
       </provider>

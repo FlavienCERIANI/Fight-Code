@@ -2,6 +2,7 @@ var dice = {
   sides: 6,
   roll: function () {
     var randomNumber = Math.floor(Math.random() * this.sides) + 1;
+
     return randomNumber;
   }
 }
@@ -18,11 +19,11 @@ function printNumber(number) {
 var button = document.getElementById('button');
 
 function de() {
-  var result = dice.roll();
+  //var result = dice.roll();
+   var result = $("#valeur_de").text();
   printNumber(result);
 };
 
-//window.onload= de();
 
 function btnform(){
 if (document.getElementById("form11")) {

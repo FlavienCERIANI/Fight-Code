@@ -1,34 +1,38 @@
 
 <?php
-$rep=$_POST['name'];
-
-// if($rep=="OK"){
-//
-// }
-// else {
-//   header('location:test_index.php');
-//   exit();
-// }
-
-if(empty($_POST['question'])){
+session_start();
+//var_dump($_SESSION['question']);
+if(empty($_POST['valider'])){
  ?>
 
 <form class="" action="question.php" method="post">
   <div class="" id="question"></div>
-  <input type="submit" class="button" name="question" value="Valider">
+  <input type="submit" class="button" name="valider" value="Valider">
 </form>
 <?php
 }
 else {
-echo "else";
-$_SESSION['de']=
-// header('Refresh: 2; url=test_index.php?choix_attaque=defense');
-// ob_flush();
+if($_POST['reponse']=="non"){
+  ?>
+  <script type="text/javascript">
+      alert("Vous avez mal répondu !");
+  </script>
+  <?php
+  header('Refresh:0 ; url=test_index.php?choix_attaque=defense');
+  ob_flush();
+}
+else {
+  ?>
+  <script type="text/javascript">
+      alert("C'est la bonne réponse !");
+  </script>
+  <?php
+  $_SESSION['question']=true;
+  header('Refresh: 0; url=test_index.php?choix_attaque=attaque');
+}
 }
  ?>
 
 
-
-<script src="question.js">
-
-</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="question.js"></script>

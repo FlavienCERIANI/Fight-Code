@@ -38,6 +38,7 @@ $question = $_SESSION['question'];
 var_dump($question);
 var_dump($facile);
 var_dump($difficile);
+var_dump($_SESSION['question']);
 
 ?>
     <form id="form11" name="form11" method="post" action="test_index.php?choix_attaque=attaque" >
@@ -47,7 +48,7 @@ var_dump($difficile);
         <input type="submit" class="button" value="Potion">
     </form>
 
-    <!-- <p id="placeholder"></p> -->
+    <p id="placeholder"></p>
   <!-- <button id="button" onclick="de();">Lancer</button> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="de.js"></script>
@@ -59,14 +60,18 @@ var_dump($difficile);
 // $player2->attaque($de->lanceDe());
 // $player1->defense($de->lanceDe());
 
-$attaque_joueur=$player1->attaque(rand(1,6);
-$player2->defense(rand(1,6);
-$player2->attaque(rand(1,6);
-$defense_joueur=$player1->defense(rand(1,6);
+// $attaque_joueur=$player1->attaque(rand(1,6));
+// $player2->defense(rand(1,6));
+// $player2->attaque(rand(1,6));
+// $defense_joueur=$player1->defense(rand(1,6));
 
+$valeur_de=rand(1,6);
+$player1->attaque($valeur_de);
+$player1->defense($valeur_de);
+$player2->defense(rand(1,6));
+$player2->attaque(rand(1,6));
 ?>
-<div class="degat" id="attaque"><?php echo $attaque_joueur; ?></div>
-<div class="degat" id="defense"><?php echo $defense_joueur; ?></div>
+<div class="degat" id="valeur_de" hidden="true"><?php echo $valeur_de; ?></div>
 <?php
 
 
@@ -105,9 +110,9 @@ if (!empty(@$_GET['choix_attaque'])){
                 $_SESSION = array();
                 //On détruit la session
                 session_destroy();
-                header('location:index.php');
+              header('Refresh: 3; url=index.php');
+              ob_flush();
             }
-            unset($_SESSION['question']);
             header('Refresh: 2; url=test_index.php?choix_attaque=defense');
             ob_flush();
         }
@@ -116,6 +121,7 @@ if (!empty(@$_GET['choix_attaque'])){
         else if(!empty($difficile) && $question !=null){
 
             $_SESSION['compteur']++;
+            $_SESSION['question']=null;
             ?>
             <script type="text/javascript">
               de();
@@ -142,7 +148,8 @@ if (!empty(@$_GET['choix_attaque'])){
                 $_SESSION = array();
                 //On détruit la session
                 session_destroy();
-                header('location:index.php');
+                header('Refresh: 3; url=index.php');
+                ob_flush();
             }
             unset($_SESSION['question']);
             header('Refresh: 2; url=test_index.php?choix_attaque=defense');
@@ -183,7 +190,8 @@ if (!empty(@$_GET['choix_attaque'])){
             $_SESSION = array();
             // On détruit la session
             session_destroy();
-            header('location:index.php');
+            header('Refresh: 3; url=index.php');
+            ob_flush();
         }
         header('Refresh: 5; url=test_index.php');
         ob_flush();
