@@ -1,3 +1,19 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: antoine_narboux
+ * Date: 22/03/17
+ * Time: 08:58
+ */
+include('Personnage.class.php');
+
+ session_start();
+// $_SESSION['player1'] = new Personnage("Rondoudou");
+// $_SESSION['player2'] = new Personnage("Dracofeu");
+$_SESSION['potion_joueur'] = 1;
+$_SESSION['potion_IA'] = 1;
+
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -36,8 +52,8 @@
     </div><!-- start -->
 
     <div style="max-width: 400px; margin: 0 auto 10px;" class="well">
-      <button class="btn btn-primary btn-lg btn-block" type="button" id="easy">Easy level</button>
-      <button class="btn btn-default btn-lg btn-block" type="button" id="hard">Hard level</button>
+      <button class="btn btn-primary btn-lg btn-block" name="facile" type="button" id="easy">Easy level</button>
+      <button class="btn btn-default btn-lg btn-block" name="difficile" type="button" id="hard">Hard level</button>
     </div><!-- well -->
 
     <h2>Choisis ton personnage</h2>
@@ -194,17 +210,22 @@
 
 //8     permet d'envoyer le level et le perso et d'envoyer sur la page d'arene
 
-        $('#fight').click(function(){
-          $.post({
-            'test_index.php',
-            {
-              var level= $('.well').val();
-              var perso= $('#').val();
-              var ia= $('#main').val();
-            }
-            //alert("OK");
-          });
-          window.location.href="arene.php";
+        // $('#easy').click(function(){
+        //   $.post({
+        //     'test_index.php',
+        //     data:"name=facile",
+        //   });
+        // });
+        // $('#hard').click(function(){
+        //   $.post({
+        //     'test_index.php',
+        //     data:"name=difficile",
+        //   });
+        // });
+
+        $('.flipper').click(function(){
+          var theId = $(this).attr('id'); //récupère l'id
+          alert (theId);
         });
 
     </script>
