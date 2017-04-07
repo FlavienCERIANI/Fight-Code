@@ -1,0 +1,141 @@
+body{
+  background-color: black!important;
+  justify-content: center;
+}
+h1{
+  text-align: center;
+  color: white!important;
+  font-size: 60px;
+}
+.versus{
+  text-align: center;
+  color: white!important;
+  width: 50%;
+}
+h2{
+  text-align: center;
+  color: white!important;
+  font-size: 40px;
+  font-family: 'DS-Digital', arial;
+}
+.start{
+  margin-left: 45%;
+  margin-top: 2%;
+}
+.well{
+  background-color: black!important;
+  border: 0px!important;
+
+}
+#easy{
+  background-color: #ec971f;
+  border: #ec971f;
+  color: white;
+}
+#hard{
+  background-color: #ec971f;
+  border: #ec971f;
+  color: white;
+}
+.fight{
+  margin-left: 39%;
+}
+#fight{
+  width: 300px;
+  height: 150px;
+  font-size: 40px;
+  text-align: center;
+}
+.gif{
+  text-align: center;
+}
+#dragon2{
+  width: 300px;
+  height: 300px;
+  margin-top: 7%;
+  margin-left: 16%;
+  display: inline-block;
+}
+#sorcier2{
+  width: 250px;
+  margin-top: 7%;
+  margin-left: 16%;
+  display: inline-block;
+}
+#giga2{
+  width: 250px;
+  margin-top: 7%;
+  margin-left: 16%;
+  display: inline-block;
+}
+#princess2{
+  width: 250px;
+  margin-top: 7%;
+  margin-left: 16%;
+  display: inline-block;
+}
+#main img {
+  display: none;
+}
+#main{
+  display: inline-block;
+  margin-left: 55%;
+  margin: 50px;
+}
+.vs{
+  display: inline-block;
+  margin-left: 3%;
+}
+
+/*******************************************/
+/* Conteneur entier, garde la perspective */
+.flip-container {
+	perspective: 1000px;
+  width: 175px;
+  height: 175px;
+  display: inline-block;
+  border: 5px solid white;
+  margin-left: 9%;
+  border-radius: 20%;
+}
+.flip-container:hover{
+  border-color: red;
+}
+.tada{
+  width: 150px;
+  height: 150px;
+  border-radius: 20%;
+}
+/*############### CODE WRITER EN DIRECT ########*/
+.typewriter h1 {
+  overflow: hidden; /* Assure que le contenu n'est pas révélé avant que l'animation soit finie */
+  border-right: 0.15em solid orange; /* le curseur */
+  white-space: nowrap; /*met le content sur une seule ligne */
+  margin: 0 auto; /* Donne l'effet de défilement à mesure que le typage se produit */
+  letter-spacing: .20em; /* Ajustez si nécessaire */
+  animation:
+    typing 10s steps(40, end),
+    blink-caret .25s step-end infinite;
+  font-family: 'DS-Digital', arial;
+}
+.writer h1{
+  overflow: hidden; /* Assure que le contenu n'est pas révélé avant que l'animation soit finie */
+  border-right: 0.15em solid orange; /* le curseur */
+  white-space: nowrap; /*met le content sur une seule ligne */
+  margin: 0 auto; /* Donne l'effet de défilement à mesure que le typage se produit */
+  letter-spacing: .15em; /* Ajustez si nécessaire */
+  animation:
+    typing 10s steps(40, end),
+    blink-caret .25s step-end infinite;
+  font-family: 'DS-Digital', arial;
+}
+ /*The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  10% { border-color: green; }
+}
