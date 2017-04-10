@@ -1,15 +1,14 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: antoine_narboux
+ * Created by Atom.
+ * User: ceriani flavien
  * Date: 22/03/17
  * Time: 08:58
  */
 include('Personnage.class.php');
 
  session_start();
-// $_SESSION['player1'] = new Personnage("Rondoudou");
-// $_SESSION['player2'] = new Personnage("Dracofeu");
+
 $_SESSION['potion_joueur'] = 1;
 $_SESSION['potion_IA'] = 1;
 
@@ -28,6 +27,7 @@ $_SESSION['potion_IA'] = 1;
   <script src="typed.js"></script>
 
   <body>
+
 
     <!-- lance le son au chargement de la page-->
     <audio class="son" autoplay="true">
@@ -214,15 +214,11 @@ $_SESSION['potion_IA'] = 1;
           console.log(random);
           console.log(ia);
 
-        // $('#'+ia+'2').css(
-        //     'display', 'inline'
-        // );
-
 //8     permet d'envoyer le level et le perso et d'envoyer sur la page d'arene
-
+        //selection niveau
         $('#easy').click(function(){
           $.post(
-            'test_index.php',
+            'arene.php',
             {
                 name : "facile"
             }
@@ -230,20 +226,32 @@ $_SESSION['potion_IA'] = 1;
         });
         $('#hard').click(function(){
           $.post(
-            'test_index.php',
+            'arene.php',
             {
               name : "difficile"
             }
           );
         });
-
+        //selection personnage
         var Id = "";
         $('.tada').click(function(){
           Id = $(this).attr('id'); //récupère l'id
+          Id=Id.replace("2","");//enlève le 2 de l'ID
           alert (Id);
         });
 
+          // function submitForm() { // submits form
+          //        document.getElementById("form11").submit();
+          //    }
+        //envoyer sur l'arène
         function myFunction() {
+          $.post(
+            'test_index.php',
+            {
+              id_joueur : Id,
+              id_ia : ia,
+            }
+          );
           window.location.href="arene.php";
         };
 

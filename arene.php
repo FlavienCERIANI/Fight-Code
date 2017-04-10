@@ -1,3 +1,9 @@
+<!--
+ * Created by Atom.
+ * User: ceriani flavien
+ * Date: 22/03/17
+ * Time: 08:58
+ -->  
 <!DOCTYPE html>
 <html>
   <head>
@@ -20,7 +26,7 @@
         <!-- </div>--><!-- container -->
     <!-- </nav>--><!-- navbar -->
     <!-- ######################################### -->
-
+<?php echo $facile=$_POST['name'];?>
     <div class="section">
         <div class="container">
             <div class="row">
