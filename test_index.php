@@ -75,7 +75,6 @@ $player2->attaque(rand(1,6));
 <div class="degat" id="valeur_de" hidden="true"><?php echo $valeur_de; ?></div>
 <?php
 
-
 echo " " . "<br>";
 echo "ROUND " . $_SESSION['compteur'] . " <br> ";
 

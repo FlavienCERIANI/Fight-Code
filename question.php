@@ -18,7 +18,7 @@ if($_POST['reponse']=="non"){
       alert("Vous avez mal répondu !");
   </script>
   <?php
-  header('Refresh:0 ; url=test_index.php?choix_attaque=defense');
+  header('Refresh:0 ; url=arene.php?choix_attaque=defense');
   ob_flush();
 }
 else {
@@ -28,7 +28,7 @@ else {
   </script>
   <?php
   $_SESSION['question']=true;
-  header('Refresh: 0; url=test_index.php?choix_attaque=attaque');
+  header('Refresh: 0; url=arene.php?choix_attaque=attaque');
 }
 }
  ?>

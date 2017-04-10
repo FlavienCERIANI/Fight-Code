@@ -25,12 +25,30 @@ $_SESSION['potion_IA'] = 1;
   <script src=https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="crossorigin="anonymous"></script>
   <script src="typed.js"></script>
+  <script type="text/javascript" src="lib/jquery.js"></script>
+  <script type="text/javascript" src="kkcountdown/kkcountdown/js/build/kkcountdown.min.js"></script>
 
   <body>
+    <!-- <div class="rebours">
+      <span class="kkcountdown" data-seconds="2804681"></span>
+    </div><!-- rebours -->
+    <div class="rebours">
+      <span class="kkcountdown" data-seconds="3"></span>
+    </div><!-- rebours -->
+
+      <div class="logo">
+        <img class="logo" onclick="PlaySon" src="images/dta.png"/>
+      </div><!-- logo -->
+
+      <div class="secondes">
+        <img class="sec" id="trois" src="images/3.jpg"/>
+        <img class="sec" id="deux" src="images/2.jpg"/>
+        <img class="sec" id="un" src="images/1.jpg"/>
+      </div><!-- secondes -->
 
 
     <!-- lance le son au chargement de la page-->
-    <audio class="son" autoplay="true">
+    <audio class="son" id="beep" autoplay="false">
        <source src="son2.mp3" type="audio/mpeg">
     </audio>
 
@@ -116,6 +134,30 @@ $_SESSION['potion_IA'] = 1;
   </div><!-- fight -->
 
     <script type="text/javascript">
+      $(function(){
+        $('#trois').fadeOut(1);
+        $('#deux').fadeOut(1);
+        $('#un').fadeOut(1);
+      });
+      function PlaySon() {
+           var sound = document.getElementById("beep");
+           sound.play();
+       }
+
+
+      $('.logo').click(function(){
+        $(this).fadeOut('slow');
+        $('#trois').delay(1000).show();
+        $('#trois').fadeOut(1);
+        $('#deux').delay(2000).show();
+        $('#deux').fadeOut(1);
+        $('#un').delay(3000).show();
+        $('#un').fadeOut(1);
+        $(this).autoplay(true);
+      })
+
+
+    $(".kkcountdown").kkcountdown();
 
 //1    permet de cacher les éléments au chargement de la page.
        $(function() {
@@ -255,10 +297,6 @@ $_SESSION['potion_IA'] = 1;
           );
           window.location.href="arene.php";
         };
-
-
-
-
     </script>
   </body>
 </html>
