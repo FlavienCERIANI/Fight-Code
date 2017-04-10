@@ -104,10 +104,10 @@ $_SESSION['potion_IA'] = 1;
   </div><!-- ia -->
 
     <div id="main">
-      <img id="dragon2" src="images/dragon.svg" alt=""/>
-      <img id="sorcier2" src="images/sorcier.svg" alt=""/>
-      <img id="giga2" src="images/giga.svg" alt=""/>
-      <img id="princess2" src="images/princess.svg" alt=""/>
+      <img id="dragon3" src="images/dragon.svg" alt=""/>
+      <img id="sorcier3" src="images/sorcier.svg" alt=""/>
+      <img id="giga3" src="images/giga.svg" alt=""/>
+      <img id="princess3" src="images/princess.svg" alt=""/>
     </div>
 
     <div class="fight">
@@ -208,27 +208,34 @@ $_SESSION['potion_IA'] = 1;
 
         var tab = ["dragon", "sorcier", "giga", "princess"];
         var ia = tab[random-1];
-        $('#main :nth-child(' + ia+"2" + ')').css(
-            'display', 'inline'
-        );
+        $('#'+ia+'3').css(
+              'display', 'inline'
+          );
+          console.log(random);
+          console.log(ia);
+
         // $('#'+ia+'2').css(
         //     'display', 'inline'
         // );
 
 //8     permet d'envoyer le level et le perso et d'envoyer sur la page d'arene
 
-        // $('#easy').click(function(){
-        //   $.post({
-        //     'test_index.php',
-        //     data:"name=facile",
-        //   });
-        // });
-        // $('#hard').click(function(){
-        //   $.post({
-        //     'test_index.php',
-        //     data:"name=difficile",
-        //   });
-        // });
+        $('#easy').click(function(){
+          $.post(
+            'test_index.php',
+            {
+                name : "facile"
+            }
+          );
+        });
+        $('#hard').click(function(){
+          $.post(
+            'test_index.php',
+            {
+              name : "difficile"
+            }
+          );
+        });
 
         var Id = "";
         $('.tada').click(function(){
