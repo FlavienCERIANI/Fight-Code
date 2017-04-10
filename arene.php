@@ -3,7 +3,7 @@
  * User: ceriani flavien
  * Date: 22/03/17
  * Time: 08:58
- -->  
+ -->
 <!DOCTYPE html>
 <html>
   <head>
@@ -26,7 +26,42 @@
         <!-- </div>--><!-- container -->
     <!-- </nav>--><!-- navbar -->
     <!-- ######################################### -->
-<?php echo $facile=$_POST['name'];?>
+<?php
+include('Personnage.class.php');
+session_start();
+///MODE FACILE
+if(!empty($_POST['facile'])){
+    $_SESSION['facile'] = $_POST['facile'];
+}
+//MODE DIFFICILE
+if(!empty($_POST['difficile'])){
+    $_SESSION['difficile'] = $_POST['difficile'];
+}
+//NOM PERSONNAGE DU JOUEUR
+if(!empty($_POST['id_joueur'])){
+  $_SESSION['player1']=$_POST['id_joueur'];
+}
+//NOM PERSONNAGE IA
+if(!empty($_POST['id_ia'])){
+  $_SESSION['player2']=$_POST['id_ia'];
+}
+
+///////ATTRIBUTION DES VARIABLES DE SESSION////
+$player1 = $_SESSION['player1'];
+$player2 = $_SESSION['player2'];
+$facile = $_SESSION['facile'];
+$difficile = $_SESSION['difficile'];
+$question = $_SESSION['question'];
+
+//////TEST/////
+var_dump($player1);
+var_dump($player2);
+var_dump($question);
+var_dump($_SESSION['question']);
+var_dump($facile);
+var_dump($difficile);
+
+?>
     <div class="section">
         <div class="container">
             <div class="row">

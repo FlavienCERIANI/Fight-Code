@@ -220,7 +220,7 @@ $_SESSION['potion_IA'] = 1;
           $.post(
             'arene.php',
             {
-                name : "facile"
+                facile : "facile"
             }
           );
         });
@@ -228,7 +228,7 @@ $_SESSION['potion_IA'] = 1;
           $.post(
             'arene.php',
             {
-              name : "difficile"
+              difficile : "difficile"
             }
           );
         });
@@ -244,9 +244,10 @@ $_SESSION['potion_IA'] = 1;
           //        document.getElementById("form11").submit();
           //    }
         //envoyer sur l'arène
+
         function myFunction() {
           $.post(
-            'test_index.php',
+            'arene.php',
             {
               id_joueur : Id,
               id_ia : ia,

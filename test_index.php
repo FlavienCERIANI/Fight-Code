@@ -7,14 +7,13 @@
  */
 
 include('Personnage.class.php');
-include('De.class.php');
+// include('De.class.php');
 
 session_start();
 echo "Début du combat";
 
 
 ?>
-
 
 
 <?php
@@ -32,9 +31,11 @@ if(!empty($_POST['facile'])){
 if(!empty($_POST['difficile'])){
     $_SESSION['difficile'] = $_POST['difficile'];
 }
+
 $facile = $_SESSION['facile'];
 $difficile = $_SESSION['difficile'];
 $question = $_SESSION['question'];
+
 var_dump($question);
 var_dump($facile);
 var_dump($difficile);
