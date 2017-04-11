@@ -53,13 +53,13 @@ $facile = $_SESSION['facile'];
 $difficile = $_SESSION['difficile'];
 $question = $_SESSION['question'];
 
-// //////TEST/////
-// var_dump($player1);
-// var_dump($player2);
-// var_dump($question);
-// var_dump($_SESSION['question']);
-// var_dump($facile);
-// var_dump($difficile);
+//////TEST/////
+var_dump($player1);
+var_dump($player2);
+var_dump($question);
+var_dump($_SESSION['question']);
+var_dump($facile);
+var_dump($difficile);
 
 ?>
 <div class="section">
@@ -79,29 +79,9 @@ $question = $_SESSION['question'];
             <p id="placeholder"></p>
             <button id="button">ATTAQUE</button>
             <!-- <script src="de.js"></script> -->
-            <script src="dice.js"></script>
-              <script src="ui.js"></script>
+            <!-- <script src="dice.js"></script> -->
+              <script src="de.js"></script>
 
-              <script type="text/javascript">
-              var dice = {
-                sides: 6,
-                roll: function () {
-                  var randomNumber = Math.floor(Math.random() * this.sides) + 1;
-                  return randomNumber;
-                }
-              };
-              //Prints dice roll to the page
-              function printNumber(number) {
-                var placeholder = document.getElementById('placeholder');
-                placeholder.innerHTML = number;
-              }
-              var button = document.getElementById('button');
-
-              button.onclick = function() {
-                var result = dice.roll();
-                printNumber(result);
-              };
-            </script>
 
             <?php
             $valeur_de=rand(1,6);
