@@ -81,7 +81,12 @@ var_dump($difficile);
             <!-- <script src="de.js"></script> -->
             <!-- <script src="dice.js"></script> -->
               <script src="de.js"></script>
-
+              <form id="form11" name="form11" method="post" action="arene.php?choix_attaque=attaque" >
+                  <input type="button" class="button"  onclick="btnform();" value="Attaquer" autocomplete="off">
+              </form>
+              <form id="form1" name="form" method="post" action="arene.php?choix_attaque=potion" >
+                  <input type="submit" class="button" value="Potion">
+              </form>
 
             <?php
             $valeur_de=rand(1,6);
@@ -90,7 +95,7 @@ var_dump($difficile);
             $player2->defense(rand(1,6));
             $player2->attaque(rand(1,6));
             ?>
-            alert('test1');
+
           <div class="degat" id="valeur_de" hidden="true"><?php echo $valeur_de; ?></div>
             <div class="jeu">
             <?php
@@ -131,6 +136,12 @@ var_dump($difficile);
                       header('Refresh: 3; url=start.php');
                       ob_flush();
                     }
+                    ?>
+                    <script type="text/javascript">
+                      // redirection_defense();
+                      setTimeout("redirection_defense()", 2000);
+                    </script>
+                    <?php
                     header('Refresh: 2; url=arene.php?choix_attaque=defense');
                     ob_flush();
                   }else if(!empty($difficile) && $question !=null){
@@ -166,13 +177,20 @@ var_dump($difficile);
                         header('Refresh: 3; url=start.php');
                         ob_flush();
                       }
-                        unset($_SESSION['question']);
+                        // unset($_SESSION['question']);
+                        echo "alors !!!!";
+                        ?>
+
+                        <script type="text/javascript">
+                          redirection_defense();
+                        </script>
+                        <?php
                         header('Refresh: 2; url=arene.php?choix_attaque=defense');
                         ob_flush();
                     }
                         else{
                             echo "olala";
-                            header('location:question.php');
+                            header('Location:question.php');
                             exit();
                         }
                   }
@@ -208,6 +226,12 @@ var_dump($difficile);
                                 header('Refresh: 3; url=start.php');
                                 ob_flush();
                               }
+                              ?>
+                              <script type="text/javascript">
+                                // redirection_defense();
+                                setTimeout("redirection_arene()", 2000);
+                              </script>
+                              <?php
                               header('Refresh: 5; url=arene.php');
                               ob_flush();
                             }
@@ -221,7 +245,12 @@ var_dump($difficile);
                               else {
                                   echo "plus de potion<br>";
                                 }
-
+                                ?>
+                                <script type="text/javascript">
+                                  // redirection_defense();
+                                  setTimeout("redirection_defense()", 2000);
+                                </script>
+                                <?php
                                 header('Refresh: 2; url=arene.php?choix_attaque=defense');
                                 ob_flush();
                               }
@@ -239,12 +268,12 @@ var_dump($difficile);
 
                           //echo "Combat Terminé !!";
                           ?>
-                          <form id="form11" name="form11" method="post" action="arene.php?choix_attaque=attaque" >
+                          <!-- <form id="form11" name="form11" method="post" action="arene.php?choix_attaque=attaque" >
                               <input type="button" class="button"  onclick="btnform();" value="Attaquer" autocomplete="off">
                           </form>
                           <form id="form1" name="form" method="post" action="arene.php?choix_attaque=potion" >
                               <input type="submit" class="button" value="Potion">
-                          </form>
+                          </form> -->
                           </div><!-- jeu -->
 
 
@@ -284,7 +313,7 @@ var_dump($difficile);
        $('#terminal').delay(2000).fadeIn(500);
     });
 
-    </script>
+    </script> -->
 
-  </body>
+  <!-- </body>
 </html>

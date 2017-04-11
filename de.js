@@ -35,6 +35,14 @@ function submitForm() { // submits form
         document.getElementById("form11").submit();
     }
 
+function redirection_defense(){
+  window.location.href="arene.php?choix_attaque=defense";
+}
+
+function redirection_arene(){
+  window.location.href="arene.php";
+}
+
 // (function(){
 //   alert();
 //         var elt = document.getElementById('attaque');
