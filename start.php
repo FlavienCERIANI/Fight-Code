@@ -41,10 +41,10 @@ $_SESSION['potion_IA'] = 1;
       </div><!-- logo -->
 
       <div class="sponsor">
-        <img class="dta" src="images/dta.png"/>
-        <img class="dta" src="images/logo_french1.png"/>
-        <img class="dta" src="images/logo_telecom.png"/>
-        <img class="dta" src="images/logoUJM.png"/>
+        <img id="dta" src="images/dta.png"/>
+        <img id="french" src="images/logo_french.png"/>
+        <img id="tel" src="images/logo_telecom.png"/>
+        <img id="ujm" src="images/logoUJM.png"/>
       </div><!-- sponsor -->
 
       <div class="secondes">
@@ -66,8 +66,12 @@ $_SESSION['potion_IA'] = 1;
 
     <!-- lance l'écriture auto -->
     <div class="typewriter">
-      <h1>< CODE ></h1>
+      <h1>< CODE /></h1>
     </div><!-- typewriter -->
+
+    <!-- <h1>< CODE /><span>&nbsp;</span></h1>
+
+    <h1>CODE-MOI SI TU PEUX !!!<span>&nbsp;</span></h1> -->
 
     <div class="writer">
       <h1>CODE-MOI SI TU PEUX !!!</h1>
@@ -159,7 +163,10 @@ $_SESSION['potion_IA'] = 1;
         $('#deux').fadeOut(1);
         $('#un').delay(3000).show();
         $('#un').fadeOut(1);
-        $('.dta').fadeOut(1);
+        $('#dta').fadeOut(1);
+        $('#french').fadeOut(1);
+        $('#tel').fadeOut(1);
+        $('#ujm').fadeOut(1);
       });
 
 // permet de gérer l'autoplay avec une fonction play/pause
