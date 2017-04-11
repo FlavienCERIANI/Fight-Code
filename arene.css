@@ -52,9 +52,10 @@ button {
 #placeholder {
   height: 100px;
   width: 100px;
-  padding: 50px;
+  padding: 33px;
+  padding-top: 0;
   margin: 35% 34% 10%;
   border: 1px solid gray;
   border-radius: 10px;
-  font-size:60px;
+  font-size:80px;
 }

@@ -68,7 +68,7 @@ $question = $_SESSION['question'];
       <div class="col-md-24">
         <div class="arene col-md-18">
           <!-- <img id="arene" src="images/arène.jpg"> -->
-          <video class="dragogg" width="500" height="532" controls="controls">
+          <video class="dragogg" width="100%" height="100%" controls="controls">
             <source src="drake.ogg" type="video/ogg" />
           </video>
 
@@ -110,6 +110,7 @@ $question = $_SESSION['question'];
             $player2->defense(rand(1,6));
             $player2->attaque(rand(1,6));
             ?>
+            alert('test1');
           <div class="degat" id="valeur_de" hidden="true"><?php echo $valeur_de; ?></div>
             <div class="jeu">
             <?php

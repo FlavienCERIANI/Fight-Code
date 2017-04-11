@@ -29,15 +29,15 @@ $_SESSION['potion_IA'] = 1;
   <script type="text/javascript" src="kkcountdown/kkcountdown/js/build/kkcountdown.min.js"></script>
 
   <body>
-    <!-- <div class="rebours">
-      <span class="kkcountdown" data-seconds="2804681"></span>
-    </div><!-- rebours -->
     <div class="rebours">
+      <span class="kkcountdown" data-seconds="2804681"></span>
+    </div><!-- rebours
+    <!-- <div class="rebours">
       <span class="kkcountdown" data-seconds="3"></span>
-    </div><!-- rebours -->
+    </div><!-- rebours --> 
 
       <div class="logo">
-        <img class="logo" onclick="PlaySon" src="images/dta.png"/>
+        <img class="logo" onclick="play('audioPlayer', this)" src="images/dta.png"/>
       </div><!-- logo -->
 
       <div class="secondes">
@@ -48,8 +48,11 @@ $_SESSION['potion_IA'] = 1;
 
 
     <!-- lance le son au chargement de la page-->
-    <audio class="son" id="beep" autoplay="false">
+    <!-- <audio class="son" id="audioPlayer" autoplay="false">
        <source src="son2.mp3" type="audio/mpeg">
+    </audio> -->
+    <audio id="audioPlayer">
+      <source src="son2.mp3">
     </audio>
 
     <!-- intègre le gif fight -->
@@ -153,8 +156,19 @@ $_SESSION['potion_IA'] = 1;
         $('#deux').fadeOut(1);
         $('#un').delay(3000).show();
         $('#un').fadeOut(1);
-        $(this).autoplay(true);
-      })
+      });
+
+      function play(idPlayer, control) {
+        var player = document.querySelector('#' + idPlayer);
+        if (player.paused) {
+            player.play();
+            control.textContent = 'Pause';
+        } else {
+            player.pause();
+            control.textContent = 'Play';
+        }
+      }
+
 
 
     $(".kkcountdown").kkcountdown();
