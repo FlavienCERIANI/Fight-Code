@@ -29,16 +29,23 @@ $_SESSION['potion_IA'] = 1;
   <script type="text/javascript" src="kkcountdown/kkcountdown/js/build/kkcountdown.min.js"></script>
 
   <body>
-    <div class="rebours">
+    <!-- <div class="rebours">
       <span class="kkcountdown" data-seconds="2804681"></span>
-    </div><!-- rebours
+    </div><!-- rebours -->
     <!-- <div class="rebours">
       <span class="kkcountdown" data-seconds="3"></span>
-    </div><!-- rebours --> 
+    </div><!-- rebours -->
 
       <div class="logo">
-        <img class="logo" onclick="play('audioPlayer', this)" src="images/dta.png"/>
+        <img class="logo" onclick="play('audioPlayer', this)" src="images/sd.png"/>
       </div><!-- logo -->
+
+      <div class="sponsor">
+        <img class="dta" src="images/dta.png"/>
+        <img class="dta" src="images/logo_french1.png"/>
+        <img class="dta" src="images/logo_telecom.png"/>
+        <img class="dta" src="images/logoUJM.png"/>
+      </div><!-- sponsor -->
 
       <div class="secondes">
         <img class="sec" id="trois" src="images/3.jpg"/>
@@ -48,9 +55,6 @@ $_SESSION['potion_IA'] = 1;
 
 
     <!-- lance le son au chargement de la page-->
-    <!-- <audio class="son" id="audioPlayer" autoplay="false">
-       <source src="son2.mp3" type="audio/mpeg">
-    </audio> -->
     <audio id="audioPlayer">
       <source src="son2.mp3">
     </audio>
@@ -60,6 +64,7 @@ $_SESSION['potion_IA'] = 1;
     <img id="fight" src="images/fight.gif">
     </div><!-- gif -->
 
+    <!-- lance l'écriture auto -->
     <div class="typewriter">
       <h1>< CODE ></h1>
     </div><!-- typewriter -->
@@ -137,17 +142,15 @@ $_SESSION['potion_IA'] = 1;
   </div><!-- fight -->
 
     <script type="text/javascript">
+
+//1 permet de cacher les chiffres du compte a rebours
       $(function(){
         $('#trois').fadeOut(1);
         $('#deux').fadeOut(1);
         $('#un').fadeOut(1);
       });
-      function PlaySon() {
-           var sound = document.getElementById("beep");
-           sound.play();
-       }
 
-
+//2 permet au click de lancer la musique et de faire apparaitre le compte a rebours
       $('.logo').click(function(){
         $(this).fadeOut('slow');
         $('#trois').delay(1000).show();
@@ -156,8 +159,10 @@ $_SESSION['potion_IA'] = 1;
         $('#deux').fadeOut(1);
         $('#un').delay(3000).show();
         $('#un').fadeOut(1);
+        $('.dta').fadeOut(1);
       });
 
+// permet de gérer l'autoplay avec une fonction play/pause
       function play(idPlayer, control) {
         var player = document.querySelector('#' + idPlayer);
         if (player.paused) {
@@ -169,11 +174,10 @@ $_SESSION['potion_IA'] = 1;
         }
       }
 
-
-
+//3 initialisation du compte a rebours
     $(".kkcountdown").kkcountdown();
 
-//1    permet de cacher les éléments au chargement de la page.
+//4    permet de cacher les éléments au chargement de la page.
        $(function() {
           $('.gif').fadeOut(1);//j'utilise fadeOut pour la compatibilité avec le délai de fadeIn en dessous
           $('.typewriter').fadeOut(1);
@@ -191,8 +195,8 @@ $_SESSION['potion_IA'] = 1;
           $('#main').hide();
           $('.ia').hide();
         });
-//2    permet d'afficher les éléments a partir de 1.5s
-        $(function() {
+//2    permet d'afficher les éléments a partir du delay
+        $('.logo').click(function() {
            $('.gif').delay(7000).fadeIn(1500);
            $('.typewriter').delay(8000).fadeIn(1500);
            $('.writer').delay(9000).fadeIn(1500);

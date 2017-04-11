@@ -2,16 +2,23 @@ body{
   background-color: black!important;
   justify-content: center;
 }
-.kkcountdown{
+/*.kkcountdown{
   width: 450px;
   margin: 12% 32%;
   color: white!important;
   size:300%;
-}
+}*/
 .logo{
-  width: 300px;
+  width: 530px;
   height: 300px;
-  margin: 12% 32%;
+  margin: 6% 22%;
+}
+.dta{
+  width: 200px;
+  height: 150px;
+}
+.sponsor{
+  margin: 0 19%;
 }
 .sec{
   width: 600px;
@@ -85,6 +92,31 @@ h2{
   display: inline-block;
 }
 #princess2{
+  width: 250px;
+  margin-top: 7%;
+  margin-left: 16%;
+  display: inline-block;
+}
+#dragon3{
+  width: 300px;
+  height: 300px;
+  margin-top: 7%;
+  margin-left: 16%;
+  display: inline-block;
+}
+#sorcier3{
+  width: 250px;
+  margin-top: 7%;
+  margin-left: 16%;
+  display: inline-block;
+}
+#giga3{
+  width: 250px;
+  margin-top: 7%;
+  margin-left: 16%;
+  display: inline-block;
+}
+#princess3{
   width: 250px;
   margin-top: 7%;
   margin-left: 16%;
