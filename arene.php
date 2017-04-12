@@ -68,8 +68,8 @@ var_dump($difficile);
       <div class="col-md-24">
         <div class="arene col-md-18">
           <!-- <img id="arene" src="images/arène.jpg"> -->
-          <video class="dragogg" width="100%" height="100%" controls="controls">
-            <source src="drake.ogg" type="video/ogg" />
+          <!-- <video class="dragogg" width="100%" height="100%" controls="controls">
+            <source src="drake.ogg" type="video/ogg" /> -->
           </video>
 
           <!-- <video class="dragmkv" src="dragon02.mkv"> -->
@@ -121,6 +121,10 @@ var_dump($difficile);
                     $player2->subit_attaque($player1->getAttaque(), $player2->getDefense());
                     echo $player2->getNom() . " reçoit " . $player2->getDegat();
 
+                    /////appel video/////
+                    echo '<video class="dragogg" width="100%" height="100%" controls="controls">';
+                    echo '<source src='.$player1->getNom().'_attaque_'.$player2->getNom().'.ogg type="video/ogg" />';
+
 
                     /////////Verification que l'adversaire soit toujours en vie//////
                     if ($player2->mort()) {
@@ -133,17 +137,21 @@ var_dump($difficile);
                       $_SESSION = array();
                       //On détruit la session
                       session_destroy();
-                      header('Refresh: 3; url=start.php');
-                      ob_flush();
+                      ?>
+                      <script type="text/javascript">
+                        redirection_start();
+                      </script>
+                      <?php
+                      // header('Refresh: 3; url=start.php');
+                      // ob_flush();
                     }
                     ?>
                     <script type="text/javascript">
-                      // redirection_defense();
-                      setTimeout("redirection_defense()", 2000);
+                      setTimeout("redirection_defense()", 10000);
                     </script>
                     <?php
-                    header('Refresh: 2; url=arene.php?choix_attaque=defense');
-                    ob_flush();
+                    // header('Refresh: 2; url=arene.php?choix_attaque=defense');
+                    // ob_flush();
                   }else if(!empty($difficile) && $question !=null){
 
                       $_SESSION['compteur']++;
@@ -162,6 +170,9 @@ var_dump($difficile);
                       $player2->subit_attaque($player1->getAttaque(), $player2->getDefense());
                       echo $player2->getNom() . " reçoit " . $player2->getDegat();
 
+                      /////appel video/////
+                      echo '<video class="dragogg" width="100%" height="100%" controls="controls">';
+                      echo '<source src='.$player1->getNom().'_attaque_'.$player2->getNom().'.ogg type="video/ogg" />';
 
                       /////////Verification que l'adversaire soit toujours en vie//////
                       if ($player2->mort()) {
@@ -174,24 +185,32 @@ var_dump($difficile);
                         $_SESSION = array();
                         //On détruit la session
                         session_destroy();
-                        header('Refresh: 3; url=start.php');
-                        ob_flush();
-                      }
-                        // unset($_SESSION['question']);
-                        echo "alors !!!!";
                         ?>
-
                         <script type="text/javascript">
-                          redirection_defense();
+                          redirection_start();
                         </script>
                         <?php
-                        header('Refresh: 2; url=arene.php?choix_attaque=defense');
-                        ob_flush();
+                        // header('Refresh: 3; url=start.php');
+                        // ob_flush();
+                      }
+                        // unset($_SESSION['question']);
+                        ?>
+                        <script type="text/javascript">
+                          setTimeout("redirection_defense()", 2000);
+                        </script>
+                        <?php
+                        // header('Refresh: 2; url=arene.php?choix_attaque=defense');
+                        // ob_flush();
                     }
                         else{
                             echo "olala";
-                            header('Location:question.php');
-                            exit();
+                            ?>
+                            <script type="text/javascript">
+                              redirection_question();
+                            </script>
+                            <?php
+                            // header('Location:question.php');
+                            // exit();
                         }
                   }
 
@@ -212,6 +231,10 @@ var_dump($difficile);
                           $player1->subit_attaque($player2->getAttaque(), $player1->getDefense());
                           echo $player1->getNom() . " reçoit " . $player1->getDegat();
 
+                          /////appel video/////
+                          echo '<video class="dragogg" width="100%" height="100%" controls="controls">';
+                          echo '<source src='.$player1->getNom().'_defense_'.$player2->getNom().'.ogg type="video/ogg" />';
+
                           /////////Verification que l'adversaire soit toujours en vie//////
                           if ($player1->mort()) {
                             ?>
@@ -223,8 +246,14 @@ var_dump($difficile);
                                 $_SESSION = array();
                                 // On détruit la session
                                 session_destroy();
-                                header('Refresh: 3; url=start.php');
-                                ob_flush();
+                                ?>
+                                <script type="text/javascript">
+                                  // redirection_defense();
+                                  redirection_start();
+                                </script>
+                                <?php
+                                // header('Refresh: 3; url=start.php');
+                                // ob_flush();
                               }
                               ?>
                               <script type="text/javascript">
@@ -232,8 +261,8 @@ var_dump($difficile);
                                 setTimeout("redirection_arene()", 2000);
                               </script>
                               <?php
-                              header('Refresh: 5; url=arene.php');
-                              ob_flush();
+                              // header('Refresh: 5; url=arene.php');
+                              // ob_flush();
                             }
                             else if ($_GET['choix_attaque'] == "potion") {
                               $_SESSION['compteur']++;
@@ -241,6 +270,9 @@ var_dump($difficile);
                               echo "<br>Utilisation Potion !<br>";
                               if($player1->UsePotion($_SESSION['potion_joueur'])){
                                 $_SESSION['potion_joueur'] -=1;
+                                /////appel video/////
+                                echo '<video class="dragogg" width="100%" height="100%" controls="controls">';
+                                echo '<source src='.$player1->getNom().'_potion.ogg type="video/ogg" />';
                               }
                               else {
                                   echo "plus de potion<br>";
@@ -251,8 +283,8 @@ var_dump($difficile);
                                   setTimeout("redirection_defense()", 2000);
                                 </script>
                                 <?php
-                                header('Refresh: 2; url=arene.php?choix_attaque=defense');
-                                ob_flush();
+                                // header('Refresh: 2; url=arene.php?choix_attaque=defense');
+                                // ob_flush();
                               }
                               else {
 

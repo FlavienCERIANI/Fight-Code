@@ -43,6 +43,14 @@ function redirection_arene(){
   window.location.href="arene.php";
 }
 
+function redirection_start(){
+  window.location.href="start.php";
+}
+
+function redirection_question(){
+  window.location.href="question.php";
+}
+
 // (function(){
 //   alert();
 //         var elt = document.getElementById('attaque');
