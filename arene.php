@@ -26,6 +26,12 @@
         <!-- </div>--><!-- container -->
     <!-- </nav>--><!-- navbar -->
     <!-- ######################################### -->
+
+    <!-- lance le son au chargement de la page-->
+    <audio id="audioPlayer">
+      <source src="son.mp3">
+    </audio>
+
 <?php
 include('Personnage.class.php');
 session_start();
