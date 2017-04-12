@@ -74,7 +74,7 @@ var_dump($difficile);
       <div class="col-md-24">
         <div class="arene col-md-18">
           <!-- <img id="arene" src="images/arène.jpg"> -->
-          <!-- <video class="dragogg" width="100%" height="100%" controls="controls">
+          <!-- <video class="dragogg" width="100%" height="100%" controls="true">
             <source src="drake.ogg" type="video/ogg" /> -->
           </video>
 
@@ -128,7 +128,7 @@ var_dump($difficile);
                     echo $player2->getNom() . " reçoit " . $player2->getDegat();
 
                     /////appel video/////
-                    echo '<video class="dragogg" width="100%" height="100%" controls="controls">';
+                    echo '<video class="dragogg" width="100%" height="100%" controls="true">';
                     echo '<source src='.$player1->getNom().'_attaque_'.$player2->getNom().'.ogg type="video/ogg" />';
 
 
@@ -177,7 +177,7 @@ var_dump($difficile);
                       echo $player2->getNom() . " reçoit " . $player2->getDegat();
 
                       /////appel video/////
-                      echo '<video class="dragogg" width="100%" height="100%" controls="controls">';
+                      echo '<video class="dragogg" width="100%" height="100%" controls="true">';
                       echo '<source src='.$player1->getNom().'_attaque_'.$player2->getNom().'.ogg type="video/ogg" />';
 
                       /////////Verification que l'adversaire soit toujours en vie//////
@@ -202,7 +202,7 @@ var_dump($difficile);
                         // unset($_SESSION['question']);
                         ?>
                         <script type="text/javascript">
-                          setTimeout("redirection_defense()", 2000);
+                          setTimeout("redirection_defense()", 10000);
                         </script>
                         <?php
                         // header('Refresh: 2; url=arene.php?choix_attaque=defense');
@@ -238,7 +238,7 @@ var_dump($difficile);
                           echo $player1->getNom() . " reçoit " . $player1->getDegat();
 
                           /////appel video/////
-                          echo '<video class="dragogg" width="100%" height="100%" controls="controls">';
+                          echo '<video class="dragogg" width="100%" height="100%" controls="true">';
                           echo '<source src='.$player1->getNom().'_defense_'.$player2->getNom().'.ogg type="video/ogg" />';
 
                           /////////Verification que l'adversaire soit toujours en vie//////
@@ -264,7 +264,7 @@ var_dump($difficile);
                               ?>
                               <script type="text/javascript">
                                 // redirection_defense();
-                                setTimeout("redirection_arene()", 2000);
+                                setTimeout("redirection_arene()", 10000);
                               </script>
                               <?php
                               // header('Refresh: 5; url=arene.php');
@@ -277,7 +277,7 @@ var_dump($difficile);
                               if($player1->UsePotion($_SESSION['potion_joueur'])){
                                 $_SESSION['potion_joueur'] -=1;
                                 /////appel video/////
-                                echo '<video class="dragogg" width="100%" height="100%" controls="controls">';
+                                echo '<video class="dragogg" width="100%" height="100%" controls="true">';
                                 echo '<source src='.$player1->getNom().'_potion_'.$player2->getNom().'.ogg type="video/ogg" />';
                               }
                               else {
@@ -286,7 +286,7 @@ var_dump($difficile);
                                 ?>
                                 <script type="text/javascript">
                                   // redirection_defense();
-                                  setTimeout("redirection_defense()", 2000);
+                                  setTimeout("redirection_defense()", 10000);
                                 </script>
                                 <?php
                                 // header('Refresh: 2; url=arene.php?choix_attaque=defense');
