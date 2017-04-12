@@ -32,9 +32,7 @@ $_SESSION['potion_IA'] = 1;
     <!-- <div class="rebours">
       <span class="kkcountdown" data-seconds="2804681"></span>
     </div><!-- rebours -->
-    <!-- <div class="rebours">
-      <span class="kkcountdown" data-seconds="3"></span>
-    </div><!-- rebours -->
+
 
       <div class="logo">
         <img class="logo" onclick="play('audioPlayer', this)" src="images/sd.png"/>
@@ -67,14 +65,12 @@ $_SESSION['potion_IA'] = 1;
     <!-- lance l'écriture auto -->
     <div class="typewriter">
       <h1>< CODE /></h1>
+      <!-- <h1>< CODE /><span>&nbsp;</span></h1> -->
     </div><!-- typewriter -->
-
-    <!-- <h1>< CODE /><span>&nbsp;</span></h1>
-
-    <h1>CODE-MOI SI TU PEUX !!!<span>&nbsp;</span></h1> -->
 
     <div class="writer">
       <h1>CODE-MOI SI TU PEUX !!!</h1>
+      <!-- <h1>CODE-MOI SI TU PEUX !!!<span>&nbsp;</span></h1> -->
     </div><!-- writer -->
 
     <div class="start">
@@ -182,7 +178,7 @@ $_SESSION['potion_IA'] = 1;
       }
 
 //3 initialisation du compte a rebours
-    $(".kkcountdown").kkcountdown();
+       $(".kkcountdown").kkcountdown();
 
 //4    permet de cacher les éléments au chargement de la page.
        $(function() {
@@ -233,6 +229,7 @@ $_SESSION['potion_IA'] = 1;
           $('.start').hide();
           $('.fight').show('slow');
           $('h2').hide();
+          $('h1').hide();
         });
 //6    permet d'afficher le personnage sélectionné
         $('#dragon').click(function(){
