@@ -278,7 +278,7 @@ var_dump($difficile);
                                 $_SESSION['potion_joueur'] -=1;
                                 /////appel video/////
                                 echo '<video class="dragogg" width="100%" height="100%" controls="controls">';
-                                echo '<source src='.$player1->getNom().'_potion.ogg type="video/ogg" />';
+                                echo '<source src='.$player1->getNom().'_potion_'.$player2->getNom().'.ogg type="video/ogg" />';
                               }
                               else {
                                   echo "plus de potion<br>";
