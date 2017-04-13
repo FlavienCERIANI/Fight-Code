@@ -166,6 +166,7 @@ h2{
     typing 10s steps(40, end),
     blink-caret .25s step-end infinite;
   font-family: 'DS-Digital', arial;
+  width: 17%;
 }
 .writer h1{
   overflow: hidden; /* Assure que le contenu n'est pas révélé avant que l'animation soit finie */
@@ -177,6 +178,7 @@ h2{
     typing 10s steps(40, end),
     blink-caret .25s step-end infinite;
   font-family: 'DS-Digital', arial;
+  width: 40%;
 }
  /*The typing effect */
 @keyframes typing {
