@@ -91,11 +91,17 @@ var_dump($difficile);
             <!-- <script src="dice.js"></script> -->
               <script src="de.js"></script>
               <form id="form11" name="form11" method="post" action="arene.php?choix_attaque=attaque" >
-                  <input type="button" class="button"  onclick="btnform();" value="Attaquer" autocomplete="off">
+                  <!-- <input type="button" class="button"  onclick="btnform();" value="Attaquer" autocomplete="off"> -->
+                  <button type="button" class="btn btn-lg btn-primary rounded" onclick="btnform();">Attaque</button>
               </form>
               <form id="form1" name="form" method="post" action="arene.php?choix_attaque=potion" >
                   <input type="submit" class="button" value="Potion">
+                  <button type="button" class="btn btn-lg btn-primary rounded">Potion</button>
               </form>
+              <div class="gameplay">
+
+                <button type="button" class="btn btn-lg btn-primary rounded">Default</button>
+              </div><!-- gameplay -->
 
             <?php
             $valeur_de=rand(1,6);
@@ -309,11 +315,7 @@ var_dump($difficile);
                           </div><!-- jeu -->
 
 
-                        <div class="gameplay">
-                          <button type="button" class="btn btn-lg btn-primary rounded">Default</button>
-                          <button type="button" class="btn btn-lg btn-primary rounded">Default</button>
-                          <button type="button" class="btn btn-lg btn-primary rounded">Default</button>
-                        </div><!-- gameplay -->
+
 
 
                     </div><!-- arene col-md-18 -->
