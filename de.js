@@ -59,7 +59,9 @@ function setVideo(phase){
 var phase_concat="_"+phase+"_";
 var nom_joueur = $("#nom_joueur").text();
 var nom_ia = $("#nom_ia").text();
-var nom=nom_joueur+phase_concat+nom_ia;
+var chemin= "video/";
+var nom=chemin+nom_joueur+phase_concat+nom_ia;
+console.log(nom);
 var elem=$("<video class=\"dragogg\" width=\"100%\" height=\"100%\" controls autoplay>"+
   "<source src="+nom+".ogg type=\"video/ogg\" />"+
     "</video>"

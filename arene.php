@@ -60,12 +60,12 @@ $difficile = $_SESSION['difficile'];
 $question = $_SESSION['question'];
 
 //////TEST/////
-var_dump($player1);
-var_dump($player2);
-var_dump($question);
-var_dump($_SESSION['question']);
-var_dump($facile);
-var_dump($difficile);
+// var_dump($player1);
+// var_dump($player2);
+// var_dump($question);
+// var_dump($_SESSION['question']);
+// var_dump($facile);
+// var_dump($difficile);
 
 ?>
 <div class="section">
@@ -102,7 +102,7 @@ var_dump($difficile);
               }
 
 
-              if($_SESSION['potion_joueur']==1){ //si la potion est déjà utilisé le bouton n'apparait plus
+              if($_SESSION['potion_joueur']==1 && empty(@$_GET['choix_attaque'])){ //si la potion est déjà utilisé le bouton n'apparait plus
                 ?>
               <form id="form12" name="form12" method="post" action="arene.php?choix_attaque=potion" >
                   <!-- <input type="submit" class="button" value="Potion"> -->
@@ -174,7 +174,7 @@ var_dump($difficile);
                     }
                     ?>
                     <script type="text/javascript">
-                      setTimeout("redirection_defense()", 10000);
+                      setTimeout("redirection_defense()", 7000);
                     </script>
                     <?php
                     // header('Refresh: 2; url=arene.php?choix_attaque=defense');
@@ -220,7 +220,7 @@ var_dump($difficile);
                         // unset($_SESSION['question']);
                         ?>
                         <script type="text/javascript">
-                          setTimeout("redirection_defense()", 10000);
+                          setTimeout("redirection_defense()", 7000);
                         </script>
                         <?php
                         // header('Refresh: 2; url=arene.php?choix_attaque=defense');
@@ -279,7 +279,7 @@ var_dump($difficile);
                               ?>
                               <script type="text/javascript">
                                 // redirection_defense();
-                                setTimeout("redirection_arene()", 10000);
+                                setTimeout("redirection_arene()", 7000);
                               </script>
                               <?php
                               // header('Refresh: 5; url=arene.php');
@@ -299,7 +299,8 @@ var_dump($difficile);
                                 ?>
                                 <script type="text/javascript">
                                   // redirection_defense();
-                                  setTimeout("redirection_defense()", 10000);
+                                  setVideo("potion"); ///lancement de la video
+                                  setTimeout("redirection_defense()", 7000);
                                 </script>
                                 <?php
                                 // header('Refresh: 2; url=arene.php?choix_attaque=defense');
