@@ -74,9 +74,12 @@ var_dump($difficile);
       <div class="col-md-24">
         <div class="arene col-md-18">
           <!-- <img id="arene" src="images/arène.jpg"> -->
+          <div class="" id="video">
+
+          </div>
           <!-- <video class="dragogg" width="100%" height="100%" controls="true">
             <source src="drake.ogg" type="video/ogg" /> -->
-          </video>
+          <!-- </video> -->
 
           <!-- <video class="dragmkv" src="dragon02.mkv"> -->
           </div><!-- arene -->
@@ -103,6 +106,8 @@ var_dump($difficile);
             ?>
 
           <div class="degat" id="valeur_de" hidden="true"><?php echo $valeur_de; ?></div>
+          <div class="degat" id="nom_joueur" hidden="true"><?php echo $player1->getNom(); ?></div>
+          <div class="degat" id="nom_ia" hidden="true"><?php echo $player2->getNom(); ?></div>
             <div class="jeu">
             <?php
             echo " " . "<br>";
@@ -116,7 +121,8 @@ var_dump($difficile);
                     $_SESSION['compteur']++;
                     ?>
                     <script type="text/javascript">
-                      de();
+                      de();  //affichage du de
+                      setVideo("attaque"); ///lancement de la video
                     </script>
                     <?php
                     ////////////////////////////Phase attaque//////////////////////
@@ -126,10 +132,6 @@ var_dump($difficile);
                     echo $player2->getNom() . " a " . $player2->getDefense() . " en défense<br>";
                     $player2->subit_attaque($player1->getAttaque(), $player2->getDefense());
                     echo $player2->getNom() . " reçoit " . $player2->getDegat();
-
-                    /////appel video/////
-                    echo '<video class="dragogg" width="100%" height="100%" controls="true">';
-                    echo '<source src='.$player1->getNom().'_attaque_'.$player2->getNom().'.ogg type="video/ogg" />';
 
 
                     /////////Verification que l'adversaire soit toujours en vie//////
@@ -165,6 +167,7 @@ var_dump($difficile);
                       ?>
                       <script type="text/javascript">
                         de();
+                        setVideo("attaque"); ///lancement de la video
                       </script>
                       <?php
 
@@ -176,11 +179,7 @@ var_dump($difficile);
                       $player2->subit_attaque($player1->getAttaque(), $player2->getDefense());
                       echo $player2->getNom() . " reçoit " . $player2->getDegat();
 
-                      /////appel video/////
-                      echo '<video class="dragogg" width="100%" height="100%" controls="true">';
-                      echo '<source src='.$player1->getNom().'_attaque_'.$player2->getNom().'.ogg type="video/ogg" />';
-
-                      /////////Verification que l'adversaire soit toujours en vie//////
+                     /////////Verification que l'adversaire soit toujours en vie//////
                       if ($player2->mort()) {
                         ?>
                         <script type="text/javascript">
@@ -228,6 +227,7 @@ var_dump($difficile);
                         ?>
                         <script type="text/javascript">
                           de();
+                          setVideo("defense"); ///lancement de la video
                           </script>
                           <?php
                           echo "Phase Defense" . "<br>";
@@ -236,10 +236,6 @@ var_dump($difficile);
                           echo $player1->getNom() . " a " . $player1->getDefense() . " en défense<br>";
                           $player1->subit_attaque($player2->getAttaque(), $player1->getDefense());
                           echo $player1->getNom() . " reçoit " . $player1->getDegat();
-
-                          /////appel video/////
-                          echo '<video class="dragogg" width="100%" height="100%" controls="true">';
-                          echo '<source src='.$player1->getNom().'_defense_'.$player2->getNom().'.ogg type="video/ogg" />';
 
                           /////////Verification que l'adversaire soit toujours en vie//////
                           if ($player1->mort()) {
@@ -276,10 +272,8 @@ var_dump($difficile);
                               echo "<br>Utilisation Potion !<br>";
                               if($player1->UsePotion($_SESSION['potion_joueur'])){
                                 $_SESSION['potion_joueur'] -=1;
-                                /////appel video/////
-                                echo '<video class="dragogg" width="100%" height="100%" controls="true">';
-                                echo '<source src='.$player1->getNom().'_potion_'.$player2->getNom().'.ogg type="video/ogg" />';
-                              }
+
+                                }
                               else {
                                   echo "plus de potion<br>";
                                 }

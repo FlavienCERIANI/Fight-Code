@@ -51,6 +51,21 @@ function redirection_question(){
   window.location.href="question.php";
 }
 
+function setVideo(phase){
+var phase_concat="_"+phase+"_";
+var nom_joueur = $("#nom_joueur").text();
+var nom_ia = $("#nom_ia").text();
+var nom=nom_joueur+phase_concat+nom_ia;
+var elem=$("<video class=\"dragogg\" width=\"100%\" height=\"100%\" controls autoplay>"+
+  "<source src="+nom+".ogg type=\"video/ogg\" />"+
+    "</video>"
+);
+console.log(elem);
+$("#video").append(elem);
+}
+
+// "<video class=\"dragogg\" width=\"100%\" height=\"100%\" controls=\"true\">"+
+
 // (function(){
 //   alert();
 //         var elt = document.getElementById('attaque');
