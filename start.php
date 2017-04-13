@@ -55,13 +55,21 @@ $_SESSION['potion_joueur'] = 1;
         <img class="sec" id="trois" src="images/3.jpg"/>
         <img class="sec" id="deux" src="images/2.jpg"/>
         <img class="sec" id="un" src="images/1.jpg"/>
+        <img class="sec" id="zero" src="images/0.jpg"/>
       </div><!-- secondes -->
+
+
+
 
 
     <!-- lance le son au chargement de la page-->
     <audio id="audioPlayer">
-      <source src="son2.mp3">
+      <source src="son3.mp3">
     </audio>
+
+    <video autoplay="true" id="intro" >
+      <source src="intro.ogg" type="video/ogg"/>
+    </video>
 
     <!-- intègre le gif fight -->
     <div class="gif">
@@ -154,6 +162,8 @@ $_SESSION['potion_joueur'] = 1;
         $('#trois').fadeOut(1);
         $('#deux').fadeOut(1);
         $('#un').fadeOut(1);
+        $('#zero').fadeOut(1);
+        // $('#intro').fadeOut(1);
       });
 
 //2 permet au click de lancer la musique et de faire apparaitre le compte a rebours
@@ -165,6 +175,10 @@ $_SESSION['potion_joueur'] = 1;
         $('#deux').fadeOut(1);
         $('#un').delay(3000).show();
         $('#un').fadeOut(1);
+        $('#zero').delay(4000).show();
+        $('#zero').fadeOut(1);
+        $('#intro').delay(7000).show();
+        // $('#intro').fadeOut();
         $('#dta').fadeOut(1);
         $('#french').fadeOut(1);
         $('#tel').fadeOut(1);
@@ -183,6 +197,9 @@ $_SESSION['potion_joueur'] = 1;
         }
       }
 
+      setTimeout(function(){
+          document.getElementById("intro").play();
+      }, 7000);
 //3 initialisation du compte a rebours
        $(".kkcountdown").kkcountdown();
 
@@ -206,11 +223,15 @@ $_SESSION['potion_joueur'] = 1;
         });
 //2    permet d'afficher les éléments a partir du delay
         $('.logo').click(function() {
-           $('.gif').delay(7000).fadeIn(1500);
-           $('.typewriter').delay(8000).fadeIn(1500);
-           $('.writer').delay(9000).fadeIn(1500);
-           $('.start').delay(13000).fadeIn(1500);
+           $('.gif').delay(16000).fadeIn(1500);
+           $('.typewriter').delay(17000).fadeIn(1500);
+           $('.writer').delay(18000).fadeIn(1500);
+           $('.start').delay(22000).fadeIn(1500);
          });
+
+        //  $(function(){
+        //    $('#intro').delay(16000).fadeOut(2000);
+        //  });
 //3    lorsqu'on click sur le bouton ça l'efface et ça fait apparaître les perso, le level, et le h2
         $('#start').click(function(){
           $(this).fadeOut(1);
