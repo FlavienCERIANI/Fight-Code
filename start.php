@@ -7,10 +7,15 @@
  */
 include('Personnage.class.php');
 
+//on detruit la session avant d'en démarrer une nouvelle
+$_SESSION = array();
+//On détruit la session
+session_destroy();
+
  session_start();
 
 $_SESSION['potion_joueur'] = 1;
-$_SESSION['potion_IA'] = 1;
+// $_SESSION['potion_IA'] = 1;
 
 ?>
 <!DOCTYPE html>

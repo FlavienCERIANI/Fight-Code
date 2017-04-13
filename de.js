@@ -35,6 +35,10 @@ function submitForm() { // submits form
         document.getElementById("form11").submit();
     }
 
+function submitForm2() { // submits form
+    document.getElementById("form12").submit();
+}
+
 function redirection_defense(){
   window.location.href="arene.php?choix_attaque=defense";
 }

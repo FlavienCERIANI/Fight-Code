@@ -86,21 +86,33 @@ var_dump($difficile);
 
           <div class="play col-md-6" id="play">
             <p id="placeholder"></p>
-            <button id="button">ATTAQUE</button>
+            <!-- <button id="button">ATTAQUE</button> -->
             <!-- <script src="de.js"></script> -->
             <!-- <script src="dice.js"></script> -->
               <script src="de.js"></script>
+
+              <?php
+              if(empty(@$_GET['choix_attaque'])){ //si aucun choix d'attaque n'est sélectionner alors le bouton apparaît
+                ?>
               <form id="form11" name="form11" method="post" action="arene.php?choix_attaque=attaque" >
                   <!-- <input type="button" class="button"  onclick="btnform();" value="Attaquer" autocomplete="off"> -->
                   <button type="button" class="btn btn-lg btn-primary rounded" onclick="btnform();">Attaque</button>
               </form>
-              <form id="form1" name="form" method="post" action="arene.php?choix_attaque=potion" >
-                  <input type="submit" class="button" value="Potion">
-                  <button type="button" class="btn btn-lg btn-primary rounded">Potion</button>
+              <?php
+              }
+
+
+              if($_SESSION['potion_joueur']==1){ //si la potion est déjà utilisé le bouton n'apparait plus
+                ?>
+              <form id="form12" name="form12" method="post" action="arene.php?choix_attaque=potion" >
+                  <!-- <input type="submit" class="button" value="Potion"> -->
+                  <button type="button" class="btn btn-lg btn-primary rounded" onclick="submitForm2();">Potion</button>
               </form>
+              <?php
+            }
+            ?>
               <div class="gameplay">
 
-                <button type="button" class="btn btn-lg btn-primary rounded">Default</button>
               </div><!-- gameplay -->
 
             <?php
@@ -110,6 +122,7 @@ var_dump($difficile);
             $player2->defense(rand(1,6));
             $player2->attaque(rand(1,6));
             ?>
+
 
           <div class="degat" id="valeur_de" hidden="true"><?php echo $valeur_de; ?></div>
           <div class="degat" id="nom_joueur" hidden="true"><?php echo $player1->getNom(); ?></div>
