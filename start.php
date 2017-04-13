@@ -327,8 +327,7 @@ $_SESSION['potion_joueur'] = 1;
         var Id = "";
         $('.tada').click(function(){
           Id = $(this).attr('id'); //récupère l'id
-          Id=Id.replace("2","");//enlève le 2 de l'ID
-          alert (Id);
+          Id=Id.replace("2","");//enlève le 2 de l'ID          
         });
 
           // function submitForm() { // submits form

@@ -1,22 +1,12 @@
-// var dice = {
-//   sides: 6,
-//   roll: function () {
-//     var randomNumber = Math.floor(Math.random() * this.sides) + 1;
-//
-//     return randomNumber;
-//   }
-// }
 
 
-
-//Prints dice roll to the page
-
+//affiche la valeur du de dans le de
 function printNumber(number) {
   var placeholder = document.getElementById('placeholder');
   placeholder.innerHTML = number;
 }
 
-var button = document.getElementById('button');
+// var button = document.getElementById('button');
 
 function de() {
   //var result = dice.roll();
@@ -70,7 +60,7 @@ console.log(elem);
 $("#video").append(elem);
 }
 
-// "<video class=\"dragogg\" width=\"100%\" height=\"100%\" controls=\"true\">"+
+
 
 // (function(){
 //   alert();

@@ -61,7 +61,7 @@ class Personnage
     }
 
     private function coupcritique(){
-        if($this->_nb_attaque>15){
+        if($this->_nb_attaque>5){
             return "coup critique !!!"."<br>";
         }
     }
@@ -72,7 +72,7 @@ class Personnage
 
     public function UsePotion($nb){
       if ($nb >= 1){
-        for($i=0;$i<10;$i++){
+        for($i=0;$i<5;$i++){
           if($this->_sante == 10){
             return true ;
           }

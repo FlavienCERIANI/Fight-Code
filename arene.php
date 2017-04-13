@@ -68,6 +68,8 @@ $question = $_SESSION['question'];
 // var_dump($difficile);
 
 ?>
+<script src="de.js"></script>
+
 <div class="section">
   <div class="container">
     <div class="row">
@@ -86,10 +88,7 @@ $question = $_SESSION['question'];
 
           <div class="play col-md-6" id="play">
             <p id="placeholder"></p>
-            <!-- <button id="button">ATTAQUE</button> -->
-            <!-- <script src="de.js"></script> -->
-            <!-- <script src="dice.js"></script> -->
-              <script src="de.js"></script>
+
 
               <?php
               if(empty(@$_GET['choix_attaque'])){ //si aucun choix d'attaque n'est sélectionner alors le bouton apparaît
@@ -110,12 +109,9 @@ $question = $_SESSION['question'];
               </form>
               <?php
             }
-            ?>
-              <div class="gameplay">
 
-              </div><!-- gameplay -->
 
-            <?php
+            //valeur du de
             $valeur_de=rand(1,6);
             $player1->attaque($valeur_de);
             $player1->defense($valeur_de);
@@ -140,7 +136,7 @@ $question = $_SESSION['question'];
                     $_SESSION['compteur']++;
                     ?>
                     <script type="text/javascript">
-                      de();  //affichage du de
+                      de();  //affichage du dé
                       setVideo("attaque"); ///lancement de la video
                     </script>
                     <?php
@@ -160,26 +156,22 @@ $question = $_SESSION['question'];
                           alert("L'adversaire est K.O !");
                       </script>
                       <?php
-                      echo $player2->_nom . " est K.O<br>";
-                      $_SESSION = array();
-                      //On détruit la session
-                      session_destroy();
+                      // $_SESSION = array();
+                      // //On détruit la session
+                      // session_destroy();
                       ?>
                       <script type="text/javascript">
                         redirection_start();
                       </script>
                       <?php
-                      // header('Refresh: 3; url=start.php');
-                      // ob_flush();
                     }
                     ?>
                     <script type="text/javascript">
                       setTimeout("redirection_defense()", 7000);
                     </script>
                     <?php
-                    // header('Refresh: 2; url=arene.php?choix_attaque=defense');
-                    // ob_flush();
-                  }else if(!empty($difficile) && $question !=null){
+
+                  }else if(!empty($difficile) && $question !=null){  //PHASE ATTAQUE EN MODE DIFFICILE
 
                       $_SESSION['compteur']++;
                       $_SESSION['question']=null;
@@ -205,41 +197,32 @@ $question = $_SESSION['question'];
                             alert("L'adversaire est K.O !");
                         </script>
                         <?php
-                        echo $player2->_nom . " est K.O<br>";
-                        $_SESSION = array();
-                        //On détruit la session
-                        session_destroy();
+                        // $_SESSION = array();
+                        // //On détruit la session
+                        // session_destroy();
                         ?>
                         <script type="text/javascript">
                           redirection_start();
                         </script>
                         <?php
-                        // header('Refresh: 3; url=start.php');
-                        // ob_flush();
                       }
-                        // unset($_SESSION['question']);
+
                         ?>
                         <script type="text/javascript">
                           setTimeout("redirection_defense()", 7000);
                         </script>
                         <?php
-                        // header('Refresh: 2; url=arene.php?choix_attaque=defense');
-                        // ob_flush();
+
                     }
-                        else{
-                            echo "olala";
+                        else{ //si mode difficile et premier clic sur bouton attaque
                             ?>
                             <script type="text/javascript">
                               redirection_question();
                             </script>
                             <?php
-                            // header('Location:question.php');
-                            // exit();
                         }
                   }
 
-                    // echo $player1->getNom() . " a " . $player1->getSante() . " point de vie<br>";
-                    // echo $player2->getNom() . " a " . $player2->getSante() . " point de vie<br>";
 
                     else if ($_GET['choix_attaque'] == "defense") {
                         ///////////////////////////Phase defense/////////////////////
@@ -263,27 +246,21 @@ $question = $_SESSION['question'];
                                 alert("Votre personnage est K.O !");
                                 </script>
                                 <?php
-                                echo $player1->_nom . " est K.O<br>";
-                                $_SESSION = array();
-                                // On détruit la session
-                                session_destroy();
+                                // $_SESSION = array();
+                                // // On détruit la session
+                                // session_destroy();
                                 ?>
                                 <script type="text/javascript">
-                                  // redirection_defense();
                                   redirection_start();
                                 </script>
                                 <?php
-                                // header('Refresh: 3; url=start.php');
-                                // ob_flush();
+
                               }
                               ?>
                               <script type="text/javascript">
-                                // redirection_defense();
                                 setTimeout("redirection_arene()", 7000);
                               </script>
                               <?php
-                              // header('Refresh: 5; url=arene.php');
-                              // ob_flush();
                             }
                             else if ($_GET['choix_attaque'] == "potion") {
                               $_SESSION['compteur']++;
@@ -300,11 +277,9 @@ $question = $_SESSION['question'];
                                 <script type="text/javascript">
                                   // redirection_defense();
                                   setVideo("potion"); ///lancement de la video
-                                  setTimeout("redirection_defense()", 7000);
+                                  setTimeout("redirection_defense()", 4000);
                                 </script>
                                 <?php
-                                // header('Refresh: 2; url=arene.php?choix_attaque=defense');
-                                // ob_flush();
                               }
                               else {
 
@@ -312,8 +287,6 @@ $question = $_SESSION['question'];
 
                             } //boucle if Empty
 
-                          // echo $player1->getNom() . " a reçu " . $player1->getDegat() ;
-                          // echo $player2->getNom() . " a reçu " . $player2->getDegat() ;
                           echo "<br>";
                           echo $player1->getNom() . " a " . $player1->getSante() . " point de vie<br>";
                           echo $player2->getNom() . " a " . $player2->getSante() . " point de vie<br>";
@@ -361,7 +334,7 @@ $question = $_SESSION['question'];
        $('#terminal').delay(2000).fadeIn(500);
     });
 
-    </script> -->
+    </script>
 
   <!-- </body>
 </html>
