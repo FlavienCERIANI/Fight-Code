@@ -26,10 +26,11 @@ body{
   height: 600px;
   margin: 8% 29%;
 }
-/*#intro{
-  width: 400px;
-  height: 400px;
-}*/
+#intro{
+  width: 600px;
+  height: 800px;
+  margin-left: 28%;
+}
 h1{
   text-align: center;
   color: white!important;
