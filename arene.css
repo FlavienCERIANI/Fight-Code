@@ -1,12 +1,18 @@
 * {
   font-family: DS-Digital, Arial, sans-serif;
   text-align: center;
+  color: white;
 }
 body{
   max-height: 800px;
 }
 .collapse navbar-collapse{
 
+}
+#video{
+  width: 1043.75px;
+  height: 532px;
+  margin-right: 20%;
 }
 #logo{
   height: 9em;
@@ -27,13 +33,13 @@ body{
   border: 20px solid lightgray;
   overflow: scroll;
   color: white;
-  text-indent: +VALUE;
+  text-indent: inherit;
 }
 #play{
   width: 351px;
   height: 56em;
   float: right;
-	background-color:antiquewhite;
+  background-image: url("images/matrice.gif");
   margin: -2% -10%;
 }
 h1{
@@ -58,7 +64,14 @@ button {
   padding: 33px;
   padding-top: 0;
   margin: 35% 34% 10%;
-  border: 1px solid gray;
+  border: 2px solid white;
   border-radius: 10px;
   font-size:80px;
+}
+#boutatak{
+  color: white;
+}
+.jeu{
+  font-size: 30px;
+  color: white;
 }

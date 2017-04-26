@@ -76,26 +76,18 @@ $question = $_SESSION['question'];
       <div class="col-md-24">
         <div class="arene col-md-18">
           <img id="arene" src="images/arène.jpg">
-          <div class="" id="video">
-
-          </div>
-          <!-- <video class="dragogg" width="100%" height="100%" controls="true">
-            <source src="drake.ogg" type="video/ogg" /> -->
-          <!-- </video> -->
-
-          <!-- <video class="dragmkv" src="dragon02.mkv"> -->
+          <div class="" id="video"></div>
           </div><!-- arene -->
 
           <div class="play col-md-6" id="play">
             <p id="placeholder"></p>
-
 
               <?php
               if(empty(@$_GET['choix_attaque'])){ //si aucun choix d'attaque n'est sélectionner alors le bouton apparaît
                 ?>
               <form id="form11" name="form11" method="post" action="arene.php?choix_attaque=attaque" >
                   <!-- <input type="button" class="button"  onclick="btnform();" value="Attaquer" autocomplete="off"> -->
-                  <button type="button" class="btn btn-lg btn-primary rounded" onclick="btnform();">Attaque</button>
+                  <button type="button" id="boutatak" class="btn btn-lg btn-primary rounded" onclick="btnform();">Attaque</button>
               </form>
               <?php
               }
@@ -105,13 +97,13 @@ $question = $_SESSION['question'];
                 ?>
               <form id="form12" name="form12" method="post" action="arene.php?choix_attaque=potion" >
                   <!-- <input type="submit" class="button" value="Potion"> -->
-                  <button type="button" class="btn btn-lg btn-primary rounded" onclick="submitForm2();">Potion</button>
+                  <button type="button" id="boutpotion" class="btn btn-lg btn-primary rounded" onclick="submitForm2();">Potion</button>
               </form>
               <?php
             }
 
 
-            //valeur du de
+            //valeur du dé
             $valeur_de=rand(1,6);
             $player1->attaque($valeur_de);
             $player1->defense($valeur_de);
@@ -299,7 +291,7 @@ $question = $_SESSION['question'];
                           <form id="form1" name="form" method="post" action="arene.php?choix_attaque=potion" >
                               <input type="submit" class="button" value="Potion">
                           </form> -->
-                          </div><!-- jeu -->
+                      </div><!-- jeu -->
                     </div><!-- arene col-md-18 -->
                 </div><!-- col-md-24 -->
             </div><!-- row -->
@@ -322,46 +314,49 @@ $question = $_SESSION['question'];
     </div><!-- continue -->
 
     <script type="text/javascript">
-    $(document).ready(function() {
-      $('.continue').hide();
-    });
-    // if($(this).attr('auteur')){
-    // // ... l'afficher.
-    //
-    // }
-    //});
 
-    $(function() {
-       $('#arene').hide();
-       $('#play').hide();
-       $('#terminal').hide();
-    });
+      $(document).ready(function() {
+        $('.continue').hide();
+        $('#terminal').text($('.arene').html());
+      });
+      // if($(this).attr('auteur')){
+      // // ... l'afficher.
+      //
+      // }
+      //});
+      $('#boutatak').click(function(){
+        $('#terminal').text($('.jeu').html());
+      });
 
-    $(function() {
-       $('#arene').delay(1000).fadeIn(500);
-       $('#play').delay(1500).fadeIn(500);
-       $('#terminal').delay(2000).fadeIn(500);
-    });
+      $(function() {
+         $('#arene').hide();
+         $('#play').hide();
+         $('#terminal').hide();
+      });
 
-    $(function(){
-      $('#terminal').text($('html').html());
-    });
+      $(function() {
+         $('#arene').delay(1000).fadeIn(500);
+         $('#play').delay(1500).fadeIn(500);
+         $('#terminal').delay(2000).fadeIn(500);
+      });
 
+      $(function(){
 
-    //permet de rediriger une fois que l'adversaire est ko sur start2.php
-    function redirFunction() {
-      // $.post(
-      //   'start2.php',
-      //   {
-      //     id_joueur : Id,
-      //     id_ia : ia,
-      //   }
-      // );
+      });
 
 
-      window.location.href="start2.php";
-    };
-        </script>
+      //permet de rediriger une fois que l'adversaire est ko sur start2.php
+      // function redirFunction() {
+      //   // $.post(
+      //   //   'start2.php',
+      //   //   {
+      //   //     id_joueur : Id,
+      //   //     id_ia : ia,
+      //   //   }
+      //   // );
+      //   window.location.href="start2.php";
+      // };
+    </script>
 
   <!-- </body>
 </html>
