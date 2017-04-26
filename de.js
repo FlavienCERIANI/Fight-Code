@@ -38,7 +38,7 @@ function redirection_arene(){
 }
 
 function redirection_start(){
-  window.location.href="start.php";
+  window.location.href="start2.php";
 }
 
 function redirection_question(){

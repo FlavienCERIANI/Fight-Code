@@ -25,6 +25,9 @@ body{
   width: 1017px;
   margin-top: -20%;
   border: 20px solid lightgray;
+  overflow: scroll;
+  color: white;
+  text-indent: +VALUE;
 }
 #play{
   width: 351px;

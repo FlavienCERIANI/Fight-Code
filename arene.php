@@ -75,7 +75,7 @@ $question = $_SESSION['question'];
     <div class="row">
       <div class="col-md-24">
         <div class="arene col-md-18">
-          <!-- <img id="arene" src="images/arène.jpg"> -->
+          <img id="arene" src="images/arène.jpg">
           <div class="" id="video">
 
           </div>
@@ -300,11 +300,6 @@ $question = $_SESSION['question'];
                               <input type="submit" class="button" value="Potion">
                           </form> -->
                           </div><!-- jeu -->
-
-
-
-
-
                     </div><!-- arene col-md-18 -->
                 </div><!-- col-md-24 -->
             </div><!-- row -->
@@ -314,16 +309,30 @@ $question = $_SESSION['question'];
     <footer class="section section-primary">
         <div class="container">
             <div class="row">
-                <div class="col-md-24" id="terminal">
+                <div class="terminal col-md-24" id="terminal">
                 </div>
             </div><!-- row -->
         </div><!-- container -->
     </footer>
 
+    <!-- creation du bouton continue qui va rediriger sur start2.php-->
+    <div class="continue">
+      <button type="button" onclick="redirFunction()" class="bouton btn btn-lg btn-warning"
+      id="continue">CONTINUE ?</button>
+    </div><!-- continue -->
+
     <script type="text/javascript">
+    $(document).ready(function() {
+      $('.continue').hide();
+    });
+    // if($(this).attr('auteur')){
+    // // ... l'afficher.
+    //
+    // }
+    //});
 
     $(function() {
-       $('#arene').hide();//j'utilise fadeOut pour la compatibilité avec le délai de fadeIn en dessous
+       $('#arene').hide();
        $('#play').hide();
        $('#terminal').hide();
     });
@@ -334,7 +343,25 @@ $question = $_SESSION['question'];
        $('#terminal').delay(2000).fadeIn(500);
     });
 
-    </script>
+    $(function(){
+      $('#terminal').text($('html').html());
+    });
+
+
+    //permet de rediriger une fois que l'adversaire est ko sur start2.php
+    function redirFunction() {
+      // $.post(
+      //   'start2.php',
+      //   {
+      //     id_joueur : Id,
+      //     id_ia : ia,
+      //   }
+      // );
+
+
+      window.location.href="start2.php";
+    };
+        </script>
 
   <!-- </body>
 </html>
