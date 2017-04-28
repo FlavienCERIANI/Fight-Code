@@ -45,23 +45,25 @@ if(!empty($_POST['difficile'])){
 }
 //NOM PERSONNAGE DU JOUEUR
 if(!empty($_POST['id_joueur'])){
- $_SESSION['player1']= new Personnage($_POST['id_joueur']);
+ $_SESSION['player1']= serialize(new Personnage($_POST['id_joueur']));
 }
 //NOM PERSONNAGE IA
 if(!empty($_POST['id_ia'])){
- $_SESSION['player2']=new Personnage($_POST['id_ia']);
+ $_SESSION['player2']=serialize(new Personnage($_POST['id_ia']));
 }
 
 ///////ATTRIBUTION DES VARIABLES DE SESSION////
-$player1 = $_SESSION['player1'];
-$player2 = $_SESSION['player2'];
+$player1 = unserialize($_SESSION['player1']);
+$player2 = unserialize($_SESSION['player2']);
 $facile = $_SESSION['facile'];
 $difficile = $_SESSION['difficile'];
 $question = $_SESSION['question'];
 
 //////TEST/////
-// var_dump($player1);
-// var_dump($player2);
+var_dump($player1);
+var_dump($player2);
+var_dump($_SESSION['player1']);
+var_dump($_SESSION['player2']);
 // var_dump($question);
 // var_dump($_SESSION['question']);
 // var_dump($facile);
@@ -80,24 +82,32 @@ $question = $_SESSION['question'];
           </div><!-- arene -->
 
           <div class="play col-md-6" id="play">
-            <p id="placeholder"></p>
+            <p id="placeholder"></p>  <!--valeur du de -->
 
               <?php
-              if(empty(@$_GET['choix_attaque'])){ //si aucun choix d'attaque n'est sélectionner alors le bouton apparaît
+              if(!empty($facile)){ //si aucun choix d'attaque n'est sélectionner alors le bouton apparaît
                 ?>
               <form id="form11" name="form11" method="post" action="arene.php?choix_attaque=attaque" >
                   <!-- <input type="button" class="button"  onclick="btnform();" value="Attaquer" autocomplete="off"> -->
-                  <button type="button" id="boutatak" class="btn btn-lg btn-primary rounded" onclick="btnform();">Attaque</button>
+                  <button type="button" id="boutatak" class="btn btn-lg btn-primary rounded" onclick="redirection_attaque();">Attaque</button>
               </form>
               <?php
               }
 
-
-              if($_SESSION['potion_joueur']==1 && empty(@$_GET['choix_attaque'])){ //si la potion est déjà utilisé le bouton n'apparait plus
+              if(!empty($difficile)){ //si aucun choix d'attaque n'est sélectionner alors le bouton apparaît
                 ?>
-              <form id="form12" name="form12" method="post" action="arene.php?choix_attaque=potion" >
+              <form id="form12" name="form12" method="post" action="arene.php?choix_attaque=attaque" >
+                  <!-- <input type="button" class="button"  onclick="btnform();" value="Attaquer" autocomplete="off"> -->
+                  <button type="button" id="boutatak2" class="btn btn-lg btn-primary rounded" onclick="redirection_question();">Attaque</button>
+              </form>
+              <?php
+              }
+
+              if($_SESSION['potion_joueur']==1){ //si la potion est déjà utilisé le bouton n'apparait plus
+                ?>
+              <form id="form13" name="form13" method="post" action="arene.php?choix_attaque=potion" >
                   <!-- <input type="submit" class="button" value="Potion"> -->
-                  <button type="button" id="boutpotion" class="btn btn-lg btn-primary rounded" onclick="submitForm2();">Potion</button>
+                  <button type="button" id="boutpotion" class="btn btn-lg btn-primary rounded" onclick="redirection_potion();">Potion</button>
               </form>
               <?php
             }
@@ -114,6 +124,7 @@ $question = $_SESSION['question'];
 
           <div class="degat" id="valeur_de" hidden="true"><?php echo $valeur_de; ?></div>
           <div class="degat" id="nom_joueur" hidden="true"><?php echo $player1->getNom(); ?></div>
+          <div class="id_session" id="id_session" hidden="true"><?php echo session_id(); ?></div>
           <div class="degat" id="nom_ia" hidden="true"><?php echo $player2->getNom(); ?></div>
             <div class="jeu">
             <?php
@@ -145,14 +156,7 @@ $question = $_SESSION['question'];
                     if ($player2->mort()) {
                       ?>
                       <script type="text/javascript">
-                          alert("L'adversaire est K.O !");
-                      </script>
-                      <?php
-                      // $_SESSION = array();
-                      // //On détruit la session
-                      // session_destroy();
-                      ?>
-                      <script type="text/javascript">
+                        alert("L'adversaire est K.O !");
                         redirection_start();
                       </script>
                       <?php
@@ -226,24 +230,17 @@ $question = $_SESSION['question'];
                           <?php
                           echo "Phase Defense" . "<br>";
 
-                          echo $player2->getNom() . " a " . $player2->getAttaque() . " en attaque<br>";
-                          echo $player1->getNom() . " a " . $player1->getDefense() . " en défense<br>";
-                          $player1->subit_attaque($player2->getAttaque(), $player1->getDefense());
-                          echo $player1->getNom() . " reçoit " . $player1->getDegat();
+                          // echo $player2->getNom() . " a " . $player2->getAttaque() . " en attaque<br>";
+                          // echo $player1->getNom() . " a " . $player1->getDefense() . " en défense<br>";
+                          // $player1->subit_attaque($player2->getAttaque(), $player1->getDefense());
+                          // echo $player1->getNom() . " reçoit " . $player1->getDegat();
 
                           /////////Verification que l'adversaire soit toujours en vie//////
                           if ($player1->mort()) {
                             ?>
                             <script type="text/javascript">
                                 alert("Votre personnage est K.O !");
-                                </script>
-                                <?php
-                                // $_SESSION = array();
-                                // // On détruit la session
-                                // session_destroy();
-                                ?>
-                                <script type="text/javascript">
-                                  redirection_start();
+                                redirection_start();
                                 </script>
                                 <?php
 

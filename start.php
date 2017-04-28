@@ -16,6 +16,7 @@ $_SESSION = array();
  // session_start();
 
 $_SESSION['potion_joueur'] = 1;
+serialize($_SESSION['potion_joueur']);
 // $_SESSION['potion_IA'] = 1;
 
 ?>

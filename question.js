@@ -66,9 +66,9 @@ var tab=[
 ];
 
 //////Produit un nombre aléatoire entre 0 et N//////
-function aleatoire(N) {
+function aleatoire2(N) {
   return (Math.floor((N)*Math.random()));
 }
 
-var num = aleatoire(tab.length);
+var num = aleatoire2(tab.length);
 $("#question").append(tab[num]);
