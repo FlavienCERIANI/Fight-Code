@@ -107,9 +107,9 @@ function redirection_start(){
    window.location.href="start2.php";
 }
 
-function redirection_question(){
+/*function redirection_question(){
   window.location.href="question.php";
-}
+}*/
 
 function testJoueurMort(){
   $.ajax({
