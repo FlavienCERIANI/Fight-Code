@@ -11,18 +11,13 @@
     <title>Arène</title>
   </head>
   <link rel="stylesheet" href="arene.css" />
-  <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="/bootstrap-3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/css/foundation.min.css" integrity="sha256-itWEYdFWzZPBG78bJOOiQIn06QCgN/F0wMDcC4nOhxY=" crossorigin="anonymous" />
   <script src=https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/js/foundation.min.js" integrity="sha256-Nd2xznOkrE9HkrAMi4xWy/hXkQraXioBg9iYsBrcFrs=" crossorigin="anonymous"></script>
   <script src="question.js"></script>
-  <script src="Fight-Code/js/vendor/jquery.js"></script>
-  <script src="Fight-Code/js/vendor/foundation.min.js"></script>
-  <script src="Fight-Code/js/vendor/what-input.js"></script>
-  <script>
-    $(document).foundation();
-    </script>
   <body>
 
     <!--######### intègre le logo dans la  navbar ########-->
@@ -105,18 +100,15 @@ var_dump($_SESSION['player2']);
 
               if(!empty($difficile)){ //si aucun choix d'attaque n'est sélectionner alors le bouton apparaît
                 ?>
-              <form id="form12" name="form12" method="post" action="arene.php?choix_attaque=attaque" >
-                  <!-- <input type="button" class="button"  onclick="btnform();" value="Attaquer" autocomplete="off"> -->
-                  <button type="button" id="boutatak2" class="btn btn-lg btn-primary rounded" <p><a data-open="exampleModal1">Attaque</button>
-              </form>
-              <p><a data-open="exampleModal1">Click me for a modal</a></p>
-              <div class="reveal" id="exampleModal1" data-reveal>
-                <h1>Awesome. I Have It.</h1>
-                <p class="lead">Your couch. It is mine.</p>
-                <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
-                <button class="close-button" data-close aria-label="Close modal" type="button">
-                  <span aria-hidden="true">&times;</span>
-                </button>
+
+              <button id="boutatak2"  >Attaque</button>
+              <!-- The Modal -->
+              <div id="myModal" class="modal">
+               <!-- Modal content -->
+               <div class="modal-content">
+                 <span class="close">&times;</span>
+                 <p>SAlut</p>
+               </div>
               </div>
               <?php
               }
@@ -329,6 +321,31 @@ var_dump($_SESSION['player2']);
     </div><!-- continue -->
 
     <script type="text/javascript">
+    // Get the modal
+    var modal = document.getElementById('myModal');
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on the button, open the modal
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+    }
 
       $(document).ready(function() {
         $('.continue').hide();
@@ -358,6 +375,7 @@ var_dump($_SESSION['player2']);
       $(function(){
 
       });
+
 
 
       //permet de rediriger une fois que l'adversaire est ko sur start2.php
