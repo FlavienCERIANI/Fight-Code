@@ -82,6 +82,7 @@ function redirection_potion(){
       console.log(data);
       $(".jeu").html(data);
     });
+    $('#boutpotion').hide(); //cache le bouton potion
     setTimeout("redirection_defense()", 4000);
   // window.location.href="arene.php?choix_attaque=defense";
 }
@@ -107,9 +108,24 @@ function redirection_start(){
    window.location.href="start2.php";
 }
 
-/*function redirection_question(){
-  window.location.href="question.php";
-}*/
+function redirection_question(){
+  $.ajax({
+      url: "question2.php",
+      method: 'POST',
+      data : 'reponse=' + $( "input:checked" ).val(),
+      dataType : 'html'
+    }).done(function(data){
+      $('#myModal').hide(); //on cache la modale au joueur une fois que le joueur a validé
+    if (data=="OUI"){
+      $(".jeu").html("C'est la bonne réponse");
+      setTimeout("redirection_attaque()", 3000);
+    }
+    else {
+      $(".jeu").html("C'est la mauvaise réponse");
+      setTimeout("redirection_defense()", 3000);
+    }
+    });
+}
 
 function testJoueurMort(){
   $.ajax({
@@ -139,11 +155,15 @@ function testOrdinateurMort(){
     });
 }
 
+
+////ACTIVE OU DESACTIVE LES BOUTONS ATTAQUE ET POTION PENDANT LES DIFFERENTES PHASES
 function Button_able(str){
   $("#boutatak").prop("disabled",str);
+  $("#boutatak2").prop("disabled",str);
   $("#boutpotion").prop("disabled",str);
 }
 
+///Lance la video adequate avec la bonne phase
 function setVideo(phase){
 var phase_concat="_"+phase+"_";
 var nom_joueur = $("#nom_joueur").text();
@@ -158,12 +178,3 @@ var elem=$("<video class=\"dragogg\" width=\"100%\" height=\"100%\" controls aut
 console.log(elem);
 $("#video").append(elem);
 }
-
-
-
-// (function(){
-//   alert();
-//         var elt = document.getElementById('attaque');
-//         var monTexte = elt.innerText || elt.textContent;
-//         alert(monTexte);
-//     })();

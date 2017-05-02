@@ -70,5 +70,9 @@ function aleatoire2(N) {
   return (Math.floor((N)*Math.random()));
 }
 
-var num = aleatoire2(tab.length);
-$("#question").append(tab[num]);
+////Affiche une question dans la modal////
+function question() {
+  var num = aleatoire2(tab.length);
+  $("#question").html(tab[num]);  //on injecte une question aleatoire
+$('#myModal').show(); //on affiche la modale au joueur
+}

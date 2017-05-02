@@ -13,7 +13,7 @@ if($player1->UsePotion($_SESSION['potion_joueur'])){
   $_SESSION['potion_joueur'] -=1;
   }
 else {
-    echo "plus de potion<br>";
+    echo "Mais...plus de potion<br>";
   }
 
 $_SESSION['player1']=serialize($player1);

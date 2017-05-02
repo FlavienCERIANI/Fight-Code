@@ -68,10 +68,12 @@ var_dump($player1);
 var_dump($player2);
 var_dump($_SESSION['player1']);
 var_dump($_SESSION['player2']);
-// var_dump($question);
-// var_dump($_SESSION['question']);
-// var_dump($facile);
-// var_dump($difficile);
+var_dump($question);
+var_dump($_SESSION['potion_joueur']);
+var_dump($_SESSION['question']);
+var_dump($facile);
+var_dump($difficile);
+
 
 ?>
 <script src="de.js"></script>
@@ -91,200 +93,208 @@ var_dump($_SESSION['player2']);
               <?php
               if(!empty($facile)){ //si aucun choix d'attaque n'est sélectionner alors le bouton apparaît
                 ?>
-              <form id="form11" name="form11" method="post" action="arene.php?choix_attaque=attaque" >
+              <!-- <form id="form11" name="form11" method="post" action="arene.php?choix_attaque=attaque" > -->
                   <!-- <input type="button" class="button"  onclick="btnform();" value="Attaquer" autocomplete="off"> -->
                   <button type="button" id="boutatak" class="btn btn-lg btn-primary rounded" onclick="redirection_attaque();">Attaque</button>
-              </form>
+              <!-- </form> -->
               <?php
               }
 
               if(!empty($difficile)){ //si aucun choix d'attaque n'est sélectionner alors le bouton apparaît
                 ?>
 
-              <button id="boutatak2"  >Attaque</button>
+              <button type="button" id="boutatak2" class="btn btn-lg btn-primary rounded" onclick="question();">Attaque</button>
+
+              <?php
+              }
+              ?>
               <!-- The Modal -->
               <div id="myModal" class="modal">
                <!-- Modal content -->
                <div class="modal-content">
                  <span class="close">&times;</span>
-                 <p>SAlut</p>
+                 <!-- <form class="quest" action="question.php" method="post"> -->
+                 <div class="col-sm-4" id="question">
+                     <!-- <div class="radio"></div>
+                     <div class="radio"></div>
+                     <div class="radio"></div> -->
+                 </div>
+                 <!-- <input type="submit" class="button" name="valider" value="Valider"> -->
+                 <!-- </form> -->
+                 <button type="button" onclick="redirection_question();">Valider</button>
+
                </div>
               </div>
               <?php
-              }
 
               if($_SESSION['potion_joueur']==1){ //si la potion est déjà utilisé le bouton n'apparait plus
                 ?>
-              <form id="form13" name="form13" method="post" action="arene.php?choix_attaque=potion" >
-                  <!-- <input type="submit" class="button" value="Potion"> -->
                   <button type="button" id="boutpotion" class="btn btn-lg btn-primary rounded" onclick="redirection_potion();">Potion</button>
-              </form>
               <?php
             }
 
-
             //valeur du dé
-            $valeur_de=rand(1,6);
-            $player1->attaque($valeur_de);
-            $player1->defense($valeur_de);
-            $player2->defense(rand(1,6));
-            $player2->attaque(rand(1,6));
+            // $valeur_de=rand(1,6);
+            // $player1->attaque($valeur_de);
+            // $player1->defense($valeur_de);
+            // $player2->defense(rand(1,6));
+            // $player2->attaque(rand(1,6));
             ?>
 
 
-          <div class="degat" id="valeur_de" hidden="true"><?php echo $valeur_de; ?></div>
-          <div class="degat" id="nom_joueur" hidden="true"><?php echo $player1->getNom(); ?></div>
+          <!-- <div class="degat" id="valeur_de" hidden="true"><?php echo $valeur_de; ?></div> -->
+          <!-- <div class="degat" id="nom_joueur" hidden="true"><?php echo $player1->getNom(); ?></div> -->
           <div class="id_session" id="id_session" hidden="true"><?php echo session_id(); ?></div>
-          <div class="degat" id="nom_ia" hidden="true"><?php echo $player2->getNom(); ?></div>
+          <!-- <div class="degat" id="nom_ia" hidden="true"><?php echo $player2->getNom(); ?></div> -->
             <div class="jeu">
             <?php
             echo " " . "<br>";
             echo "ROUND " . $_SESSION['compteur'] . " <br> ";
-
-            if (!empty(@$_GET['choix_attaque'])){
-
-              if ($_GET['choix_attaque'] == "attaque") {
-
-                  if (!empty($facile)){
-                    $_SESSION['compteur']++;
-                    ?>
-                    <script type="text/javascript">
-                      de();  //affichage du dé
-                      setVideo("attaque"); ///lancement de la video
-                    </script>
-                    <?php
-                    ////////////////////////////Phase attaque//////////////////////
-                    echo "Phase Attaque" . "<br>";
-
-                    echo $player1->getNom() . " a " . $player1->getAttaque() . " en attaque<br>";
-                    echo $player2->getNom() . " a " . $player2->getDefense() . " en défense<br>";
-                    $player2->subit_attaque($player1->getAttaque(), $player2->getDefense());
-                    echo $player2->getNom() . " reçoit " . $player2->getDegat();
-
-
-                    /////////Verification que l'adversaire soit toujours en vie//////
-                    if ($player2->mort()) {
-                      ?>
-                      <script type="text/javascript">
-                        alert("L'adversaire est K.O !");
-                        redirection_start();
-                      </script>
-                      <?php
-                    }
-                    ?>
-                    <script type="text/javascript">
-                      setTimeout("redirection_defense()", 7000);
-                    </script>
-                    <?php
-
-                  }else if(!empty($difficile) && $question !=null){  //PHASE ATTAQUE EN MODE DIFFICILE
-
-                      $_SESSION['compteur']++;
-                      $_SESSION['question']=null;
-                      ?>
-                      <script type="text/javascript">
-                        de();
-                        setVideo("attaque"); ///lancement de la video
-                      </script>
-                      <?php
-
-                      ////////////////////////////Phase attaque//////////////////////
-                      echo "Phase Attaque" . "<br>";
-
-                      echo $player1->getNom() . " a " . $player1->getAttaque() . " en attaque<br>";
-                      echo $player2->getNom() . " a " . $player2->getDefense() . " en défense<br>";
-                      $player2->subit_attaque($player1->getAttaque(), $player2->getDefense());
-                      echo $player2->getNom() . " reçoit " . $player2->getDegat();
-
-                     /////////Verification que l'adversaire soit toujours en vie//////
-                      if ($player2->mort()) {
-                        ?>
-                        <script type="text/javascript">
-                            alert("L'adversaire est K.O !");
-                        </script>
-                        <?php
-                        // $_SESSION = array();
-                        // //On détruit la session
-                        // session_destroy();
-                        ?>
-                        <script type="text/javascript">
-                          redirection_start();
-                        </script>
-                        <?php
-                      }
-
-                        ?>
-                        <script type="text/javascript">
-                          setTimeout("redirection_defense()", 7000);
-                        </script>
-                        <?php
-
-                    }
-                        else{ //si mode difficile et premier clic sur bouton attaque
-                            ?>
-                            <script type="text/javascript">
-                              redirection_question();
-                            </script>
-                            <?php
-                        }
-                  }
-
-
-                    else if ($_GET['choix_attaque'] == "defense") {
-                        ///////////////////////////Phase defense/////////////////////
-                        ?>
-                        <script type="text/javascript">
-                          de();
-                          setVideo("defense"); ///lancement de la video
-                          </script>
-                          <?php
-                          echo "Phase Defense" . "<br>";
-
-                          // echo $player2->getNom() . " a " . $player2->getAttaque() . " en attaque<br>";
-                          // echo $player1->getNom() . " a " . $player1->getDefense() . " en défense<br>";
-                          // $player1->subit_attaque($player2->getAttaque(), $player1->getDefense());
-                          // echo $player1->getNom() . " reçoit " . $player1->getDegat();
-
-                          /////////Verification que l'adversaire soit toujours en vie//////
-                          if ($player1->mort()) {
-                            ?>
-                            <script type="text/javascript">
-                                alert("Votre personnage est K.O !");
-                                redirection_start();
-                                </script>
-                                <?php
-
-                              }
-                              ?>
-                              <script type="text/javascript">
-                                setTimeout("redirection_arene()", 7000);
-                              </script>
-                              <?php
-                            }
-                            else if ($_GET['choix_attaque'] == "potion") {
-                              $_SESSION['compteur']++;
-                              ///////Mettre en place potion//////
-                              echo "<br>Utilisation Potion !<br>";
-                              if($player1->UsePotion($_SESSION['potion_joueur'])){
-                                $_SESSION['potion_joueur'] -=1;
-
-                                }
-                              else {
-                                  echo "plus de potion<br>";
-                                }
-                                ?>
-                                <script type="text/javascript">
-                                  // redirection_defense();
-                                  setVideo("potion"); ///lancement de la video
-                                  setTimeout("redirection_defense()", 4000);
-                                </script>
-                                <?php
-                              }
-                              else {
-
-                              }
-
-                            } //boucle if Empty
+            //
+            // if (!empty(@$_GET['choix_attaque'])){
+            //
+            //   if ($_GET['choix_attaque'] == "attaque") {
+            //
+            //       if (!empty($facile)){
+            //         $_SESSION['compteur']++;
+            //         ?>
+            //         <script type="text/javascript">
+            //           de();  //affichage du dé
+            //           setVideo("attaque"); ///lancement de la video
+            //         </script>
+            //         <?php
+            //         ////////////////////////////Phase attaque//////////////////////
+            //         echo "Phase Attaque" . "<br>";
+            //
+            //         echo $player1->getNom() . " a " . $player1->getAttaque() . " en attaque<br>";
+            //         echo $player2->getNom() . " a " . $player2->getDefense() . " en défense<br>";
+            //         $player2->subit_attaque($player1->getAttaque(), $player2->getDefense());
+            //         echo $player2->getNom() . " reçoit " . $player2->getDegat();
+            //
+            //
+            //         /////////Verification que l'adversaire soit toujours en vie//////
+            //         if ($player2->mort()) {
+            //           ?>
+            //           <script type="text/javascript">
+            //             alert("L'adversaire est K.O !");
+            //             redirection_start();
+            //           </script>
+            //           <?php
+            //         }
+            //         ?>
+            //         <script type="text/javascript">
+            //           setTimeout("redirection_defense()", 7000);
+            //         </script>
+            //         <?php
+            //
+            //       }else if(!empty($difficile) && $question !=null){  //PHASE ATTAQUE EN MODE DIFFICILE
+            //
+            //           $_SESSION['compteur']++;
+            //           $_SESSION['question']=null;
+            //           ?>
+            //           <script type="text/javascript">
+            //             de();
+            //             setVideo("attaque"); ///lancement de la video
+            //           </script>
+            //           <?php
+            //
+            //           ////////////////////////////Phase attaque//////////////////////
+            //           echo "Phase Attaque" . "<br>";
+            //
+            //           echo $player1->getNom() . " a " . $player1->getAttaque() . " en attaque<br>";
+            //           echo $player2->getNom() . " a " . $player2->getDefense() . " en défense<br>";
+            //           $player2->subit_attaque($player1->getAttaque(), $player2->getDefense());
+            //           echo $player2->getNom() . " reçoit " . $player2->getDegat();
+            //
+            //          /////////Verification que l'adversaire soit toujours en vie//////
+            //           if ($player2->mort()) {
+            //             ?>
+            //             <script type="text/javascript">
+            //                 alert("L'adversaire est K.O !");
+            //             </script>
+            //             <?php
+            //             // $_SESSION = array();
+            //             // //On détruit la session
+            //             // session_destroy();
+            //             ?>
+            //             <script type="text/javascript">
+            //               redirection_start();
+            //             </script>
+            //             <?php
+            //           }
+            //
+            //             ?>
+            //             <script type="text/javascript">
+            //               setTimeout("redirection_defense()", 7000);
+            //             </script>
+            //             <?php
+            //
+            //         }
+            //             else{ //si mode difficile et premier clic sur bouton attaque
+            //                 ?>
+            //                 <script type="text/javascript">
+            //                   redirection_question();
+            //                 </script>
+            //                 <?php
+            //             }
+            //       }
+            //
+            //
+            //         else if ($_GET['choix_attaque'] == "defense") {
+            //             ///////////////////////////Phase defense/////////////////////
+            //             ?>
+            //             <script type="text/javascript">
+            //               de();
+            //               setVideo("defense"); ///lancement de la video
+            //               </script>
+            //               <?php
+            //               echo "Phase Defense" . "<br>";
+            //
+            //               // echo $player2->getNom() . " a " . $player2->getAttaque() . " en attaque<br>";
+            //               // echo $player1->getNom() . " a " . $player1->getDefense() . " en défense<br>";
+            //               // $player1->subit_attaque($player2->getAttaque(), $player1->getDefense());
+            //               // echo $player1->getNom() . " reçoit " . $player1->getDegat();
+            //
+            //               /////////Verification que l'adversaire soit toujours en vie//////
+            //               if ($player1->mort()) {
+            //                 ?>
+            //                 <script type="text/javascript">
+            //                     alert("Votre personnage est K.O !");
+            //                     redirection_start();
+            //                     </script>
+            //                     <?php
+            //
+            //                   }
+            //                   ?>
+            //                   <script type="text/javascript">
+            //                     setTimeout("redirection_arene()", 7000);
+            //                   </script>
+            //                   <?php
+            //                 }
+            //                 else if ($_GET['choix_attaque'] == "potion") {
+            //                   $_SESSION['compteur']++;
+            //                   ///////Mettre en place potion//////
+            //                   echo "<br>Utilisation Potion !<br>";
+            //                   if($player1->UsePotion($_SESSION['potion_joueur'])){
+            //                     $_SESSION['potion_joueur'] -=1;
+            //
+            //                     }
+            //                   else {
+            //                       echo "plus de potion<br>";
+            //                     }
+            //                     ?>
+            //                     <script type="text/javascript">
+            //                       // redirection_defense();
+            //                       setVideo("potion"); ///lancement de la video
+            //                       setTimeout("redirection_defense()", 4000);
+            //                     </script>
+            //                     <?php
+            //                   }
+            //                   else {
+            //
+            //                   }
+            //
+            //                 } //boucle if Empty
 
                           echo "<br>";
                           echo $player1->getNom() . " a " . $player1->getSante() . " point de vie<br>";
@@ -292,18 +302,18 @@ var_dump($_SESSION['player2']);
 
                           //echo "Combat Terminé !!";
                           ?>
-                          <!-- <form id="form11" name="form11" method="post" action="arene.php?choix_attaque=attaque" >
-                              <input type="button" class="button"  onclick="btnform();" value="Attaquer" autocomplete="off">
-                          </form>
-                          <form id="form1" name="form" method="post" action="arene.php?choix_attaque=potion" >
-                              <input type="submit" class="button" value="Potion">
-                          </form> -->
-                      </div><!-- jeu -->
-                    </div><!-- arene col-md-18 -->
-                </div><!-- col-md-24 -->
-            </div><!-- row -->
-        </div><!-- container -->
-    </div><!-- section -->
+    //                       <!-- <form id="form11" name="form11" method="post" action="arene.php?choix_attaque=attaque" >
+    //                           <input type="button" class="button"  onclick="btnform();" value="Attaquer" autocomplete="off">
+    //                       </form>
+    //                       <form id="form1" name="form" method="post" action="arene.php?choix_attaque=potion" >
+    //                           <input type="submit" class="button" value="Potion">
+    //                       </form> -->
+    //                   </div><!-- jeu -->
+    //                 </div><!-- arene col-md-18 -->
+    //             </div><!-- col-md-24 -->
+    //         </div><!-- row -->
+    //     </div><!-- container -->
+    // </div><!-- section -->
 
     <footer class="section section-primary">
         <div class="container">
@@ -325,15 +335,18 @@ var_dump($_SESSION['player2']);
     var modal = document.getElementById('myModal');
 
     // Get the button that opens the modal
-    var btn = document.getElementById("myBtn");
+    var btn = document.getElementById("boutatak2");
 
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
 
     // When the user clicks on the button, open the modal
-    btn.onclick = function() {
-      modal.style.display = "block";
-    }
+    // btn.onclick = function() {
+    //   $("#question").html(
+    //   "coucou"
+    // );
+    //   modal.style.display = "block";
+    // }
 
     // When the user clicks on <span> (x), close the modal
     span.onclick = function() {
