@@ -111,8 +111,7 @@ $question = $_SESSION['question'];
               <!-- The Modal -->
               <div id="myModal" class="modal">
                <!-- Modal content -->
-               <div class="modal-content">
-                 <span class="close">&times;</span>
+               <div class="modal-content">        
                  <div class="quest" id="question">
                      <!-- <div class="radio"></div>
                      <div class="radio"></div>
