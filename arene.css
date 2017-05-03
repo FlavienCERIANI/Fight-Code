@@ -10,9 +10,10 @@ body{
 
 }
 #video{
-  width: 1043.75px;
+  width: 1055px;
   height: 532px;
-  margin-right: 20%;
+  margin-left: -23%;
+  margin-top: -4px
 }
 #logo{
   height: 9em;
@@ -26,20 +27,22 @@ body{
 }
 #terminal{
   background-color: black;
-  height: 18em;
-  margin: 0 0 0 -9%;
-  width: 1017px;
-  margin-top: -20%;
+  height: 234px;
+  margin: 0 0 0 -109px;
+  width: 937px;
+  margin-top: -215px;
   border: 20px solid lightgray;
-  overflow: scroll;
+  /*overflow: scroll;*/
   color: white;
   text-indent: inherit;
 }
 #play{
-  width: 351px;
+  width: 410px;
   height: 56em;
   float: right;
-  background-image: url("images/matrice.gif");
+  background-image: url("images/noir.gif");
+  /*background-color: black;*/
+  /*background-repeat: no-repeat;*/
   margin: -2% -10%;
 }
 h1{
@@ -61,22 +64,27 @@ button {
 #de_joueur {
   height: 100px;
   width: 100px;
-  padding: 33px;
-  padding-top: 0;
-  margin: 35% 34% 10%;
+  padding-top: -10px;
+  margin: 5% 34% 10%;
   border: 2px solid blue;
   border-radius: 10px;
-  font-size:80px;
+  font-size:60px;
+  color: white;
 }
 #de_ia {
   height: 100px;
   width: 100px;
-  padding: 33px;
-  padding-top: 0;
-  margin: 35% 34% 10%;
+  padding-top: -10px;
+  margin: 10% 34% 10%;
   border: 2px solid red;
   border-radius: 10px;
-  font-size:80px;
+  font-size:60px;
+  color: white;
+}
+#round{
+  padding-top: 18%;
+  color: white;
+  font-size: 60px;
 }
 #boutatak{
   /*color: white;*/
@@ -85,8 +93,6 @@ button {
   font-size: 30px;
   color: white;
 }
-
-
 
  /* The Modal (background) */
 .modal {

@@ -20,20 +20,11 @@
   <script src="question.js"></script>
   <body>
 
-    <!--######### intègre le logo dans la  navbar ########-->
-    <!-- <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-        <div class="container">
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <img id="logo" src="images/fight.gif"> -->
-              <!-- <h1>FIGHT < CODE ></h1>
-            </div>--><!-- collapse -->
-        <!-- </div>--><!-- container -->
-    <!-- </nav>--><!-- navbar -->
-    <!-- ######################################### -->
+
 
     <!-- lance le son au chargement de la page-->
-    <audio id="audioPlayer">
-      <source src="son.mp3">
+    <audio autoplay="true">
+      <source src="son.mp3" type="audio/mp3" />
     </audio>
 
 <?php
@@ -111,12 +102,8 @@ $question = $_SESSION['question'];
               <!-- The Modal -->
               <div id="myModal" class="modal">
                <!-- Modal content -->
-               <div class="modal-content">        
-                 <div class="quest" id="question">
-                     <!-- <div class="radio"></div>
-                     <div class="radio"></div>
-                     <div class="radio"></div> -->
-                 </div>
+               <div class="modal-content">
+                 <div class="quest" id="question"></div>
                  <button type="button" onclick="redirection_question();">Valider</button>
 
                </div>
@@ -144,6 +131,7 @@ $question = $_SESSION['question'];
               echo $player2->getNom() . " a " . $player2->getSante() . " point de vie<br>";
             ?>
                        </div><!-- jeu -->
+
                      </div><!-- arene col-md-18 -->
                  </div><!-- col-md-24 -->
              </div><!-- row -->
@@ -226,9 +214,6 @@ $question = $_SESSION['question'];
          $('#terminal').delay(2000).fadeIn(500);
       });
 
-      $(function(){
-
-      });
 
 
 
