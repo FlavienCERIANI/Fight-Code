@@ -7,21 +7,22 @@ $player1 = unserialize($_SESSION['player1']);
 $player2 = unserialize($_SESSION['player2']);
 unserialize($_SESSION['compteur']);
 
-$valeur_de=$_GET['de'];
-$player2->defense(rand(1,6));
-$player1->attaque($valeur_de);
+$valeur_de_joueur=$_GET['de_joueur'];
+$valeur_de_ia=$_GET['de_ia'];
+$player2->defense($valeur_de_ia);
+$player1->attaque($valeur_de_joueur);
 
 //Si le compteur vaut 0/null alors on ajoute 1 pour round 1
-if($_SESSION['compteur']==""){
-  $line .= "<br>"."ROUND " . $_SESSION['compteur'] ."1". " <br> ";
-  $_SESSION['compteur']++;
-}
-else {
-  $line .= "<br>"."ROUND " . $_SESSION['compteur'] . " <br> ";
-}
+// if($_SESSION['compteur']==""){
+//   $line .= "<br>"."ROUND " . $_SESSION['compteur'] ."1". " <br> ";
+//   $_SESSION['compteur']++;
+// }
+// else {
+//   $line .= "<br>"."ROUND " . $_SESSION['compteur'] . " <br> ";
+// }
 
 
-$line .= "Phase Attaque" . "<br>";
+$line .= "<br>"."Phase Attaque" . "<br>"."<br>";
 
 $line .= $player1->getNom() . " a " . $player1->getAttaque() . " en attaque<br>";
 $line .= $player2->getNom() . " a " . $player2->getDefense() . " en défense<br>";

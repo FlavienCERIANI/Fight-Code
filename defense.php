@@ -7,15 +7,16 @@ $player1 = unserialize($_SESSION['player1']);
 $player2 = unserialize($_SESSION['player2']);
 unserialize($_SESSION['compteur']);
 
-$valeur_de=$_GET['de'];
-$player2->attaque(rand(1,6));
-$player1->defense($valeur_de);
+$valeur_de_joueur=$_GET['de_joueur'];
+$valeur_de_ia=$_GET['de_ia'];
+$player2->attaque($valeur_de_ia);
+$player1->defense($valeur_de_joueur);
 
 
 $line .= " " . "<br>";
-$line .= "ROUND " . $_SESSION['compteur'] . " <br> ";
+// $line .= "ROUND " . $_SESSION['compteur'] . " <br> ";
 
-$line .= "Phase Defense" . "<br>";
+$line .= "Phase Defense" . "<br>". "<br>";
 
 $line .= $player2->getNom() . " a " . $player2->getAttaque() . " en attaque<br>";
 $line .= $player1->getNom() . " a " . $player1->getDefense() . " en défense<br>";

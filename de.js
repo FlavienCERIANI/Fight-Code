@@ -1,19 +1,23 @@
-var valeur_de=0;
+var valeur_de_joueur=0;
+var valeur_de_ia=0;
+var round=1;
 
-//affiche la valeur du de dans le de
-function printNumber(number) {
-  var placeholder = document.getElementById('placeholder');
-  placeholder.innerHTML = number;
+
+
+function effaceDe() {
+  var placeholder = document.getElementById('de_joueur');
+  placeholder.innerHTML = "";
+  var placeholder = document.getElementById('de_ia');
+  placeholder.innerHTML = "";
 }
 
-// var button = document.getElementById('button');
-
-function de() {
-  //var result = dice.roll();
-  //  var result = $("#valeur_de").text();
-  valeur_de= aleatoire(6);
-  printNumber(valeur_de);
-};
+//simule une valeur aleatoire et affiche cette derniere
+function De(nom) {
+  var valeur_de = aleatoire(6);
+  var placeholder = document.getElementById(nom);
+  placeholder.innerHTML = valeur_de;
+  return valeur_de;
+}
 
 //////Produit un nombre aléatoire entre 1 et N//////
 function aleatoire(N) {
@@ -36,12 +40,13 @@ function aleatoire(N) {
 
 function redirection_attaque(){
   Button_able(true);
-  de();
+  valeur_de_joueur = De('de_joueur');
+  valeur_de_ia = De('de_ia');
   setVideo("attaque");
   $.ajax({
       url: "attaque.php",
       method: 'GET',
-      data : 'id_session=' + $("#id_session").html() + '&de=' + valeur_de,
+      data : 'id_session=' + $("#id_session").html() + '&de_joueur=' + valeur_de_joueur+ '&de_ia=' + valeur_de_ia,
       dataType : 'html'
     }).done(function(data){
       console.log(data);
@@ -54,12 +59,13 @@ function redirection_attaque(){
 
 function redirection_defense(){
   Button_able(true);
-  de();
+  valeur_de_joueur = De('de_joueur');
+  valeur_de_ia = De('de_ia');
   setVideo("defense");
   $.ajax({
       url: "defense.php",
       method: 'GET',
-      data : 'id_session=' + $("#id_session").html() + '&de=' + valeur_de,
+      data : 'id_session=' + $("#id_session").html() + '&de_joueur=' + valeur_de_joueur+ '&de_ia=' + valeur_de_ia,
       dataType : 'html'
     }).done(function(data){
       console.log(data);
@@ -88,10 +94,15 @@ function redirection_potion(){
 }
 
 function redirection_arene(){
+  //incrementation du numéro de round
+  round++;
+  $("#round").html("ROUND "+round);
+  //Met une image
+  setVideoFixe("attaque");
   // active les boutons
   Button_able(false);
   //efface la valeur du jet de de précédent
-  placeholder.innerHTML="";
+  effaceDe();
   $.ajax({
       url: "arene_standart.php",
       method: 'GET',
@@ -176,5 +187,20 @@ var elem=$("<video class=\"dragogg\" width=\"100%\" height=\"100%\" controls aut
     "</video>"
 );
 console.log(elem);
-$("#video").append(elem);
+$("#video").html(elem);
+}
+
+function setVideoFixe(phase){
+var phase_concat="_"+phase+"_";
+var nom_joueur = $("#nom_joueur").text();
+var nom_ia = $("#nom_ia").text();
+var chemin= "video/";
+var nom=chemin+nom_joueur+phase_concat+nom_ia;
+console.log(nom);
+var elem=$("<video class=\"dragogg\" width=\"100%\" height=\"100%\">"+
+  "<source src="+nom+".ogg type=\"video/ogg\" />"+
+    "</video>"
+);
+console.log(elem);
+$("#video").html(elem);
 }

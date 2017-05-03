@@ -9,7 +9,7 @@ unserialize($_SESSION['compteur']);
 $_SESSION['compteur']++;
 
 $line .= " " . "<br>";
-$line .= "ROUND " . $_SESSION['compteur'] . " <br> ";
+// $line .= "ROUND " . $_SESSION['compteur'] . " <br> ";
 
 $line .= "<br>";
 $line .= $player1->getNom() . " a " . $player1->getSante() . " point de vie<br>";

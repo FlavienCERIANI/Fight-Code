@@ -58,13 +58,23 @@ button {
   width: 120px;
   cursor: pointer;
 }
-#placeholder {
+#de_joueur {
   height: 100px;
   width: 100px;
   padding: 33px;
   padding-top: 0;
   margin: 35% 34% 10%;
-  border: 2px solid white;
+  border: 2px solid blue;
+  border-radius: 10px;
+  font-size:80px;
+}
+#de_ia {
+  height: 100px;
+  width: 100px;
+  padding: 33px;
+  padding-top: 0;
+  margin: 35% 34% 10%;
+  border: 2px solid red;
   border-radius: 10px;
   font-size:80px;
 }
