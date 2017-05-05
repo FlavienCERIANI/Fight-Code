@@ -43,7 +43,7 @@ serialize($_SESSION['potion_joueur']);
 
     <!-- lance le son au chargement de la page-->
     <audio autoplay="true">
-      <source src="son2.mp3" type="audio/mp3" />
+      <source src="son/son2.mp3" type="audio/mp3" />
     </audio>
 
     <!-- intègre le gif fight -->

@@ -24,7 +24,7 @@
 
     <!-- lance le son au chargement de la page-->
     <audio autoplay="true">
-      <source src="son.mp3" type="audio/mp3" />
+      <source src="son/son.mp3" type="audio/mp3" />
     </audio>
 
 <?php

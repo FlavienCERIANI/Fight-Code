@@ -61,7 +61,7 @@ serialize($_SESSION['potion_joueur']);
 
     <!-- lance le son au chargement de la page-->
     <audio id="audioPlayer">
-      <source src="son3.mp3">
+      <source src="son/son3.mp3">
     </audio>
 
     <!-- intègre la video avec les personnages-->

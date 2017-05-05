@@ -71,6 +71,10 @@ button {
   font-size:60px;
   color: white;
 }
+#nom_joueur{
+  color: green;
+  font-size: 30px;
+}
 #de_ia {
   height: 100px;
   width: 100px;
@@ -80,6 +84,10 @@ button {
   border-radius: 10px;
   font-size:60px;
   color: white;
+}
+#nom_ia{
+  color: yellow;
+  font-size: 30px;
 }
 #round{
   padding-top: 18%;
