@@ -1,6 +1,7 @@
 var valeur_de_joueur=0;
 var valeur_de_ia=0;
 var round=1;
+var php="<?php";
 
 
 
@@ -40,6 +41,16 @@ function aleatoire(N) {
 
 function redirection_attaque(){
   Button_able(true);
+  $('#terminal').html(
+    // "<br>"+
+    "<h3>Vous attaquez</h3>"+
+    "$player2->defense($valeur_de_ia);<br>"+
+    "$player1->attaque($valeur_de_joueur);<br>"+
+    "$player1->getNom() . \" a \" . $player1->getAttaque() . \" en attaque\";<br>"+
+    "$player2->getNom() . \" a \" . $player2->getDefense() . \" en défense\";<br>"+
+    "$player2->subit_attaque($player1->getAttaque(), $player2->getDefense());<br>"+
+    "$player2->getNom() . \" reçoit \" . $player2->getDegat();<br>"
+  );
   valeur_de_joueur = De('de_joueur');
   valeur_de_ia = De('de_ia');
   setVideo("attaque");
@@ -59,6 +70,16 @@ function redirection_attaque(){
 
 function redirection_defense(){
   Button_able(true);
+  $('#terminal').html(
+    // "<br>"+
+    "<h3>Vous vous défendez</h3>"+
+    "$player2->attaque($valeur_de_ia);<br>"+
+    "$player1->defense($valeur_de_joueur);<br>"+
+    "$player2->getNom() . \" a \" . $player2->getAttaque() . \" en attaque\";<br>"+
+    "$player1->getNom() . \" a \" . $player1->getDefense() . \" en défense\";<br>"+
+    "$player1->subit_attaque($player2->getAttaque(), $player1->getDefense());<br>"+
+    "$player1->getNom() . \" reçoit \" . $player1->getDegat();"
+  );
   valeur_de_joueur = De('de_joueur');
   valeur_de_ia = De('de_ia');
   setVideo("defense");
@@ -78,6 +99,16 @@ function redirection_defense(){
 
 function redirection_potion(){
   Button_able(true);
+  $('#terminal').html(
+    // "<br>"+
+    "<h3>Vous utilisez une potion</h3>"+
+    "if($player1->UsePotion($_SESSION['potion_joueur'])){<br>"+
+      "$_SESSION['potion_joueur'] -=1;<br>"+
+      "}<br>"+
+    "else {<br>"+
+        "echo \"Mais...plus de potion<br>\";<br>"+
+      "}<br>"
+    );
   setVideo("potion");
   $.ajax({
       url: "potion.php",
@@ -101,6 +132,8 @@ function redirection_arene(){
   setVideoFixe("attaque");
   // active les boutons
   Button_able(false);
+  //efface le contenu du terminal
+  $('#terminal').empty();
   //efface la valeur du jet de de précédent
   effaceDe();
   $.ajax({

@@ -191,7 +191,12 @@ $question = $_SESSION['question'];
 
       $(document).ready(function() {
         $('.continue').hide();
-        $('#terminal').text($('.arene').html());
+        // $('#terminal').text($('.arene').html());
+        $('#terminal').html("<br><h2>Le code du jeu ici</h2><br>"+
+        "$player1 est votre personnage<br>"+
+        "$player2 est le personnage de l'ordinateur"
+      );
+
       });
       // if($(this).attr('auteur')){
       // // ... l'afficher.
@@ -199,7 +204,7 @@ $question = $_SESSION['question'];
       // }
       //});
       $('#boutatak').click(function(){
-        $('#terminal').text($('.jeu').html());
+        // $('#terminal').text($('.jeu').html());
       });
 
       $(function() {
